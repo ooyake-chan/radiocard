@@ -7,19 +7,14 @@ import Main from './Component/Main'
 
 
 class App extends Component {
-  
   constructor(props){
     super(props)
+    alert(this.props.mode)
     this.doChange = this.doChange.bind(this)
   }
   
-  style = {
-    width:"375px",
-    margin:"0 auto",
-    backgroundColor:"#cef0ff",
-  }
-  doChange(){
-    if(this.props.mode == 'first'){
+  doChange(e){
+    if(e.shiftKey){
       this.props.dispatch({type:'MAIN'})
     }else{
       this.props.dispatch({type:'FIRST'})
@@ -28,7 +23,7 @@ class App extends Component {
   render(){
     let current_page
     switch(this.props.mode){
-      case 'first' :
+      case 'FIRST' :
       current_page = (
         <div>
           <p>here is first page</p>
@@ -38,22 +33,15 @@ class App extends Component {
       )
       break
 
-      case 'main' :
-        current_page = (
-        <div>
-          <p>here is main page</p>
-          <button onClick={this.doChange}>click</button>
-          <p>{this.props.mode}</p>
-        </div>) 
+      case 'MAIN' :
+      current_page = (<div>here is the main page</div>) 
       break
       
       default :
-      current_page = (<div><button onClick={this.doChange}>click</button>
-        <p>{this.props.mode}</p>
-      </div>) 
+      current_page = (<div>some error</div>) 
       
     }
-    return <div style={this.style} >
+    return <div>
       {current_page}
       <p>App.js</p>
     </div>
