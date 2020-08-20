@@ -12,10 +12,7 @@ class App extends Component {
     super(props)
     this.doChange = this.doChange.bind(this)
   }
-  
   style = {
-    width:"375px",
-    margin:"0 auto",
     backgroundColor:"#cef0ff",
   }
   doChange(){
@@ -30,32 +27,26 @@ class App extends Component {
     switch(this.props.mode){
       case 'first' :
       current_page = (
-        <div>
-          <p>here is first page</p>
-      <button onClick={this.doChange}>main</button>
-      <p>{this.props.mode}</p>
-      </div>
+          <First />
       )
       break
 
       case 'main' :
         current_page = (
-        <div>
-          <p>here is main page</p>
-          <button onClick={this.doChange}>click</button>
-          <p>{this.props.mode}</p>
-        </div>) 
+          <Main />
+        ) 
       break
       
       default :
-      current_page = (<div><button onClick={this.doChange}>click</button>
+      current_page = (
+      <div>
         <p>{this.props.mode}</p>
       </div>) 
       
     }
     return <div style={this.style} >
       {current_page}
-      <p>App.js</p>
+      <button onClick={this.doChange}>click</button>
     </div>
   }
 }
