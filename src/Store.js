@@ -6,25 +6,38 @@ const state_value = {
   fontcolor:'#434343',
   currentStamp:'../public/img/stamp_good.svg',
   stampData:[],
-  back:{
-    color:'#cef0ff',
-    img:'backsample_1.jpg',
-    style:'backgroundSize:"320px"',
-  },
-  mode:'first',
-  blacklist:[],
-  whitelist:[]
+  mode:'main',
+  blacklist:['mode'],
+  whitelist:['cardname']
 }
 
 // レデューサー
 export function cardReducer(state = state_value, action){
   switch (action.type){
     case 'FIRST' : 
-      return {mode:'first'}
+      return {
+        cardname:state.cardname,
+        fontcolor:state.fontcolor,
+        currentStamp:state.currentStamp,
+        stampData:state.stampData,
+        mode:'first'
+      }
     case 'MAIN' : 
-      return {mode:'main'}
+      return {
+        cardname:state.cardname,
+        fontcolor:state.fontcolor,
+        currentStamp:state.currentStamp,
+        stampData:state.stampData,
+        mode:'main'
+      }
     case 'HOW' : 
-      return { mode:'main'}
+      return { 
+        cardname:state.cardname,
+        fontcolor:state.fontcolor,
+        currentStamp:state.currentStamp,
+        stampData:state.stampData,
+        mode:'main'
+      }
     case 'NAME':
       return nameReduce(action) 
     default:
@@ -40,14 +53,6 @@ function nameReduce(action){
   let name = action.cardname
   return {
     cardname:name,
-    fontcolor:'#434343',
-    currentStamp:'../public/img/stamp_good.svg',
-    stampData:[],
-    back:{
-      color:'#cef0ff',
-      img:'../public/img/backsample_1.jpg',
-      style:'backgroundSize:"320px"',
-    },
     mode:'main'
   }
 

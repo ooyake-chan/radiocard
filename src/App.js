@@ -4,17 +4,25 @@ import './App.css';
 import First from './Component/First'
 import Main from './Component/Main'
 
-
-
 class App extends Component {
   
   constructor(props){
     super(props)
     this.doChange = this.doChange.bind(this)
+    this.check()
   }
   style = {
     backgroundColor:"#cef0ff",
   }
+
+  check(){
+    if(this.props.cardname !== ""){
+      this.props.dispatch({type:'MAIN'})
+    }else{
+      this.props.dispatch({type:'FIRST'})
+    }
+  }
+
   doChange(){
     if(this.props.mode == 'first'){
       this.props.dispatch({type:'MAIN'})
@@ -22,6 +30,7 @@ class App extends Component {
       this.props.dispatch({type:'FIRST'})
     }
 }
+
   render(){
     let current_page
     switch(this.props.mode){
@@ -40,6 +49,7 @@ class App extends Component {
       default :
       current_page = (
       <div>
+        <p>no mode</p>
         <p>{this.props.mode}</p>
       </div>) 
       

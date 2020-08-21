@@ -1,0 +1,139 @@
+@font-face{
+  font-family: 'tsukushi';
+  src: url('./webtsukushi.woff')format('woff');
+}
+*{
+  box-sizing: border-box;
+}
+a{
+  text-decoration: none;
+  
+}
+body{
+  font-family: 'tsukushi', '游ゴシック', 'Arial', 'メイリオ', 'ヒラギノ角ゴ ProN', sans-serif;
+  color: #434343;
+  font-size: 16px;
+}
+button {
+  font-family: 'tsukushi', '游ゴシック', 'Arial', 'メイリオ', 'ヒラギノ角ゴ ProN', sans-serif;
+  color: #434343;
+	background: none;
+	border: none;
+	outline: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+.table{
+  background-color: white;
+  border-radius: 5px;
+  padding: 25px 30px;
+}
+.flex{
+  display: flex;
+}
+.yel_btn{
+  padding:15px 30px;
+  border-radius: 10px;
+  background: #fffa7c;
+  font-size: 1.8em;
+    &:hover{
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+  }
+    &:active{
+    box-shadow: 0 8px 6px rgba(0, 0, 0, 0.15);
+  }
+}
+  
+.modal_wrapper{
+  &:not(:target){
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .3s, visibility .3s;
+  }
+  &:target{
+    opacity: 1;
+    visibility: visible;
+    transition: opacity .4s, visibility .4s;
+  }
+  &::after{
+    display: inline-block;
+    height: 100%;
+    margin-left: -.05em;
+    vertical-align: middle;
+    content: ""
+  }
+  .mBack{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(67, 67, 67, 0.7);
+  }
+}
+
+.modal{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 95%;
+  background-color: white;
+  border-radius: 5px;
+  text-align: center;
+  & h1{
+    border-radius: 5px;
+    margin: 0;
+  }
+  .mBody{
+    padding: 40px;
+  }
+  .mBody .yel_btn{
+    padding: 10px 13px;
+    margin-top: 20px;
+    font-size: 0.9em;
+  }
+}
+
+.first{
+  width: 90%;
+  margin: 0 auto;
+  padding:30px;
+  text-align: center;
+  & h1{
+    font-size: 1.8em;
+  }
+  & h2{
+    color: #41c5ff;
+  }
+  & hr{
+    border: 2px dashed #41c5ff;
+  }
+  .table{
+    margin-top:20px;
+    margin-bottom:30px;
+  }
+}
+
+.main{
+  width: 85%;
+  padding: 60px 0;
+  margin: 0 auto;
+  text-align: center;
+  .img_wrapper{
+    position: relative;
+    & img{
+      width: 100%;
+    }
+    & h1{
+      margin: 0;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    & h2{
+      letter-spacing: 0.2em;
+    }
+  }
+}
