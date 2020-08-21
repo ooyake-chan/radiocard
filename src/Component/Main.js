@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
+import Stamps from './Stamp'
 import Img from '../static/backsample_1.jpg'
 
 class Main extends Component{
@@ -17,6 +18,7 @@ class Main extends Component{
           <img src={Img}/>
           <h2>{date}</h2>
         </div>
+        <Stamps />
       </div>
     </main>
   }
