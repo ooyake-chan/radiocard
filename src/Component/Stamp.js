@@ -1,14 +1,8 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
+import image from '../static/stamp_cake.svg'
 
-function Stamp(props){
-  return( 
-  <button className="stamp" onClick={props.onClick}>
-    {props.value}
-  </button>)
-}
-
-class Stamps extends Component{
+class Stamp extends Component{
   constructor(props){
     super(props)
     this.state = {
@@ -16,17 +10,32 @@ class Stamps extends Component{
     }
     this.doAction = this.doAction.bind(this)
   }
-  renderStamp(){
-    let s = []
-    for(let i=0; i<=31; i++){
-     s.push(<Stamp key={i} onClick={this.doAction} value={this.state.on ? '★' : ''}/>)
-    }
-    return (s)
+  style = {
+    backgroundImage:image,
   }
+
   doAction(){
     this.setState({
       on:!this.state.on
     })
+  }
+
+  render(){
+  let img = (<img src={image}/>)
+  return( 
+  <button className="stamp" onClick={this.doAction} style={this.style}>
+  {this.state.on ? img : ''}
+  </button>)
+  }
+}
+
+class Stamps extends Component{
+  renderStamp(){
+    let s = []
+    for(let i=0; i<=31; i++){
+     s.push(<Stamp key={i} />)
+    }
+    return (s)
   }
 
   render(){
