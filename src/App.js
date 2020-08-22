@@ -16,7 +16,7 @@ class App extends Component {
   }
 
   check(){
-    if(this.props.cardname !== ""){
+    if(this.props.cardname !== undefined && this.props.cardname !== ""){
       this.props.dispatch({type:'MAIN'})
     }else{
       this.props.dispatch({type:'FIRST'})
@@ -61,4 +61,11 @@ class App extends Component {
   }
 }
 
-export default connect ((state)=>state)(App)
+function mappingState(state){
+  return {
+    cardname:state.cardname,
+    mode:state.mode,
+  }
+}
+
+export default connect (mappingState)(App)

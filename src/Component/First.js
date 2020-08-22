@@ -23,7 +23,6 @@ class First extends Component{
   doAction(e){
     e.preventDefault()
     let action = nameAction(this.state.name)
-    alert(this.state.name)
     this.props.dispatch(action)
   }
   render(){

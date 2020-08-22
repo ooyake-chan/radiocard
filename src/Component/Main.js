@@ -24,4 +24,10 @@ class Main extends Component{
   }
 }
 
-export default connect((state)=>state)(Main)
+function mappingState(state){
+  return{
+    cardname:state.cardname,
+  }
+}
+
+export default connect(mappingState)(Main)
