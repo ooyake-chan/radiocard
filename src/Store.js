@@ -7,8 +7,9 @@ const state_value = {
   currentStamp:'../public/img/stamp_good.svg',
   stampcheck:Array().fill(false),
   mode:'main',
+  counter:0,
   blacklist:['mode'],
-  whitelist:['cardname']
+  whitelist:['cardname', 'stampcheck']
 }
 
 // レデューサー
@@ -36,6 +37,10 @@ export function cardReducer(state = state_value, action){
       return nameReduce(action) 
     case 'STAMP':
       return stampReduce(state, action) 
+    case 'COUNTER':
+      return {
+        counter:state.counter + 1
+      }  
     default:
       return {
         cardname:state.cardname,
@@ -56,13 +61,12 @@ function nameReduce(action){
   }
 }
 function stampReduce(state, action){
-  let stamp = action.stampcheck
-  console.log(stamp)
+  let newstamp = action.stampcheck.slice()
   return{
     cardname:state.cardname,
     fontcolor:state.fontcolor,
     currentStamp:state.currentStamp,
-    stampcheck:stamp,
+    stampcheck:newstamp,
     mode:'main'
   }
 }

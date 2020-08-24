@@ -14,7 +14,7 @@ class Stamp extends Component{
   let img = (<img src={image}/>)
   return( 
   <button className="stamp" onClick={this.props.onClick} style={this.style}>
-  {this.props.check ? img : ''}
+  {this.props.check ? img : this.props.day}
   </button>)
   }
 }
@@ -42,14 +42,18 @@ class Stamps extends Component{
     })
     let action = stampAction(this.state.stampcheck)
     this.props.dispatch(action)
-    console.log('store'+this.props.stampcheck)
-    console.log('state'+this.state.stampcheck)
   }
 
   renderStamp(){
     let s = []
-    for(let i=0; i<=4; i++){
-     s.push(<Stamp key={i} check={this.state.stampcheck[i]} onClick={()=>this.doAction(i)}/>)
+    for(let i=0; i<=30; i++){
+     s.push(
+      <Stamp 
+          key={i} 
+          day={i+1}
+          check={this.state.stampcheck[i]} 
+          onClick={()=>this.doAction(i)}
+        />)
     }
     return (s)
   }
@@ -71,4 +75,4 @@ function mappingState(state){
   }
 }
 
-export default connect((state)=>state)(Stamps)
+export default connect(mappingState)(Stamps)
