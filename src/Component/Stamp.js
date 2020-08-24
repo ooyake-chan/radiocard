@@ -37,9 +37,13 @@ class Stamps extends Component{
   doAction(i){
     let check = this.state.stampcheck
     check[i] = check[i] ? false : true
-    this.setState({stampcheck:check})
+    this.setState({
+      stampcheck:check
+    })
     let action = stampAction(this.state.stampcheck)
     this.props.dispatch(action)
+    console.log('store'+this.props.stampcheck)
+    console.log('state'+this.state.stampcheck)
   }
 
   renderStamp(){
@@ -51,9 +55,10 @@ class Stamps extends Component{
   }
 
   render(){
+    let stamps = this.renderStamp()
     return(
       <div>
-        {this.renderStamp()}
+        {stamps}
     </div>
       
     )

@@ -27,7 +27,8 @@ class Main extends Component{
 function mappingState(state){
   return{
     cardname:state.cardname,
+    stampcheck:state.stampcheck,
   }
 }
 
-export default connect(mappingState)(Main)
+export default connect((mappingState))(Main)
