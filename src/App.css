@@ -146,6 +146,7 @@ button {
 }
 
 .main .img_wrapper h1 {
+  width: 100%;
   margin: 0;
   position: absolute;
   left: 50%;
@@ -156,10 +157,40 @@ button {
   letter-spacing: 0.2em;
 }
 
-.stamp {
-  width: 50px;
-  height: 50px;
-  border-radius: 25px;
+.stamps {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.stamps .stampwrap {
+  width: 14%;
+  margin-bottom: 15px;
+  display: inline-block;
+}
+
+.stamps .stampwrap .stamp {
+  position: relative;
+  width: 70%;
+  padding-top: 80%;
+  border-radius: 50%;
   background-color: white;
+  box-sizing: content-box;
+  overflow: hidden;
+}
+
+.stamps .stampwrap .stamp img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+}
+
+.stamps .stampwrap p {
+  margin-top: 0;
 }
 /*# sourceMappingURL=App.css.map */

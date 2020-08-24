@@ -13,9 +13,12 @@ class Stamp extends Component{
   render(){
   let img = (<img src={image}/>)
   return( 
-  <button className="stamp" onClick={this.props.onClick} style={this.style}>
-  {this.props.check ? img : this.props.day}
-  </button>)
+    <div className="stampwrap">
+      <button className="stamp" onClick={this.props.onClick} style={this.style}>
+      {this.props.check ? img : ''}
+      </button>
+  <p>{this.props.day}</p>
+  </div>)
   }
 }
 
@@ -61,8 +64,10 @@ class Stamps extends Component{
   render(){
     let stamps = this.renderStamp()
     return(
-      <div>
-        {stamps}
+      <div className="stamps">
+        
+          {stamps}
+
     </div>
       
     )
