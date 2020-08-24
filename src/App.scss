@@ -142,7 +142,6 @@ button {
   width: 100%;
   max-width: 1000px;
   margin: 0 auto;
-  text-align: center;
   display: flex;
   flex-wrap: wrap;
   .stampwrap{
@@ -156,7 +155,6 @@ button {
       border-radius:50%;
       background-color: white;
       box-sizing: content-box;
-      overflow: hidden;
       & img{
         position: absolute;
         top: 50%;
