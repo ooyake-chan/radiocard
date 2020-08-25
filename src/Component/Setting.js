@@ -7,13 +7,21 @@ class Setting extends Component{
   constructor(props){
     super(props)
     this.state={
-      page:'FIRST'
+      page:'FIRST',
+      backcolor:'',
     }
     this.doAction = this.doAction.bind(this)
+    this.doChange = this.doChange.bind(this)
   }
   doAction(page){
     this.setState({
       page:page
+    })
+  }
+  doChange(e){
+    let color = e.target.value
+    this.setState({
+      backcolor:color
     })
   }
   render(){
@@ -22,7 +30,7 @@ class Setting extends Component{
       case 'FIRST' :
       return  <SetMain onClick={this.doAction} />
       case 'BACK' :
-        return  <SetBack onClick={this.doAction} />
+        return  <SetBack onClick={this.doAction} onChange={()=>this.doChange} />
       case 'STAMP' :
         return  <SetStamp onClick={this.doAction} />
       case 'NAME' :

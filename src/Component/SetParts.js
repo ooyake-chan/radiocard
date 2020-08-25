@@ -31,8 +31,8 @@ export function SetBack(props){
     <div>
       <h2>背景を変える</h2>
       <div className="flex">
-        <div onClick={()=>props.onClick('BACK')}>
-          <img src={back_icon}/>
+        <div>
+        <input type="color" value="#cef0ff" onChange={props.onChange()}/>
           <p>色を選択</p>
         </div>
         <div onClick={()=>props.onClick('STAMP')}>
