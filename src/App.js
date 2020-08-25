@@ -56,7 +56,7 @@ class App extends Component {
     }
     return <div style={this.style} >
       {current_page}
-      <button onClick={this.doChange}>click</button>
+      {/* <button onClick={this.doChange}>click</button> */}
     </div>
   }
 }

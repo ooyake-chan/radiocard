@@ -1,3 +1,9 @@
+$main-color:#41c5ff;
+$back-color:#cef0ff;
+$text-color:#434343;
+$yellow:#fffa7c;
+$red:#ff80c9;
+
 @font-face{
   font-family: 'tsukushi';
   src: url('./webtsukushi.woff')format('woff');
@@ -11,12 +17,12 @@ a{
 }
 body{
   font-family: 'tsukushi', '游ゴシック', 'Arial', 'メイリオ', 'ヒラギノ角ゴ ProN', sans-serif;
-  color: #434343;
+  color: $text-color;
   font-size: 16px;
 }
 button {
   font-family: 'tsukushi', '游ゴシック', 'Arial', 'メイリオ', 'ヒラギノ角ゴ ProN', sans-serif;
-  color: #434343;
+  color: $text-color;
 	background: none;
 	border: none;
 	outline: none;
@@ -36,7 +42,7 @@ button {
 .yel_btn{
   padding:15px 30px;
   border-radius: 10px;
-  background: #fffa7c;
+  background: $yellow;
   font-size: 1.8em;
     &:hover{
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
@@ -44,6 +50,14 @@ button {
     &:active{
     box-shadow: 0 8px 6px rgba(0, 0, 0, 0.15);
   }
+}
+.mBack{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(67, 67, 67, 0.7);
+  z-index: 1;
 }
   
 .modal_wrapper{
@@ -64,13 +78,7 @@ button {
     vertical-align: middle;
     content: ""
   }
-  .mBack{
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(67, 67, 67, 0.7);
-  }
+
 }
 
 .modal{
@@ -105,10 +113,10 @@ button {
     font-size: 1.8em;
   }
   & h2{
-    color: #41c5ff;
+    color: $main-color;
   }
   & hr{
-    border: 2px dashed #41c5ff;
+    border: 2px dashed $main-color;
   }
   .table{
     margin-top:20px;
@@ -118,7 +126,7 @@ button {
 
 .main{
   width: 85%;
-  padding: 60px 0;
+  padding: 20px 0 15px 0;
   margin: 0 auto;
   text-align: center;
   .img_wrapper{
@@ -168,4 +176,84 @@ button {
         }
   }
 }
-  
+
+@keyframes r1{
+  0%{transform: rotate(0deg);}
+  100%{transform: rotate(360deg);}
+}
+.set-wrapper{
+  position: fixed;
+  width: 100%;
+  text-align: center;
+  bottom: 0;
+  .setting{
+    position: relative;
+    z-index: 2;
+    transform: translateY(75%);
+    transition: 1s;
+    label > img{
+      transform: translateY(50%);
+    }
+    .setConteiner{
+      padding-bottom: 30px;
+      border-top: 30px solid ;
+      background-color:white;
+      & img{
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        border: 1px solid #ebebeb;
+      }
+      .block{
+        display: inline-block;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        border: 1px solid #ebebeb;
+        color: white;
+        line-height: 40px;
+        background-color: $main-color;
+      }
+      .flex{
+        justify-content: center;
+        > div{
+          padding: 0 10px;
+          width: 20%;
+        }
+      }
+    }
+    button{
+      border: 2px solid $main-color;
+      color: $main-color;
+    }
+  }
+}
+    .s-back{
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(67, 67, 67, 0.7);
+      display: none;
+    }
+    #set-input{
+      display: none;
+    }
+    #set-input:checked{
+      ~.setting .gire{
+        animation: r1 5s linear infinite;
+        margin-bottom: 15px;
+      }
+      ~.setting{
+        transform: translateY(0);
+        transition: 1s;
+      }
+      ~.setting .setConteiner{
+        border-top:10px solid;
+      }
+      ~ .s-back{
+        display: block;
+      }
+    }

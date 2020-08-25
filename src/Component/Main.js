@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
 import Stamps from './Stamp'
+import Setting from './Setting'
 import Img from '../static/backsample_1.jpg'
 
 class Main extends Component{
@@ -20,6 +21,7 @@ class Main extends Component{
         </div>
         <Stamps />
       </div>
+        <Setting/>
     </main>
   }
 }
