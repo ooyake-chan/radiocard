@@ -6,19 +6,19 @@ import back_icon from '../static/backsample_1.jpg'
 function SetMain(){
   return (
     <div>
-    <h2>設定</h2>
-    <div className="flex">
-      <div>
-        <img src={back_icon}/>
-        <p>背景を変える</p>
+      <h2>設定</h2>
+      <div className="flex">
+        <div>
+          <img src={back_icon}/>
+          <p>背景を変える</p>
         </div>
-      <div>
-        <img src={gire_icon}/>
-        <p>スタンプを作る</p>
+        <div>
+          <img src={gire_icon}/>
+          <p>スタンプを作る</p>
         </div>
-      <div>
-        <span className='block'>Name</span>
-        <p>カードの名前を変える</p>
+        <div>
+          <span className='block'>Name</span>
+          <p>カードの名前を変える</p>
         </div>
       </div>
       <div>

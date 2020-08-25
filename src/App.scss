@@ -186,10 +186,10 @@ button {
   width: 100%;
   text-align: center;
   bottom: 0;
+  transform: translateY(75%);
   .setting{
     position: relative;
     z-index: 2;
-    transform: translateY(75%);
     transition: 1s;
     label > img{
       transform: translateY(50%);
@@ -227,33 +227,33 @@ button {
       color: $main-color;
     }
   }
+  .s-back{
+    position: fixed;
+    top: -250%;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 300%;
+    background-color: rgba(67, 67, 67, 0.7);
+    display: none;
+  }
+  #set-input{
+    display: none;
+  }
 }
-    .s-back{
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 1;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(67, 67, 67, 0.7);
-      display: none;
-    }
-    #set-input{
-      display: none;
-    }
-    #set-input:checked{
-      ~.setting .gire{
-        animation: r1 5s linear infinite;
-        margin-bottom: 15px;
-      }
-      ~.setting{
-        transform: translateY(0);
-        transition: 1s;
-      }
-      ~.setting .setConteiner{
-        border-top:10px solid;
-      }
-      ~ .s-back{
-        display: block;
-      }
-    }
+#set-input:checked{
+  ~.setting .gire{
+    animation: r1 5s linear infinite;
+    margin-bottom: 15px;
+  }
+  ~.setting{
+    transform: translateY(-75%);
+    transition: 1s;
+  }
+  ~.setting .setConteiner{
+    border-top:10px solid;
+  }
+  ~ .s-back{
+    display: block;
+  }
+}
