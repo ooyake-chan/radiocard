@@ -3,13 +3,13 @@ import { createStore } from 'redux'
 //ステートの値
 const state_value = {
   cardname:'',
+  backcolor:'',
   fontcolor:'#434343',
   currentStamp:'../public/img/stamp_good.svg',
   stampcheck:Array().fill(false),
   mode:'main',
-  counter:0,
   blacklist:['mode'],
-  whitelist:['cardname', 'stampcheck']
+  whitelist:['cardname', 'stampcheck', 'backcolor']
 }
 
 // レデューサー
@@ -37,10 +37,10 @@ export function cardReducer(state = state_value, action){
       return nameReduce(action) 
     case 'STAMP':
       return stampReduce(state, action) 
-    case 'COUNTER':
-      return {
-        counter:state.counter + 1
-      }  
+    case 'BACK':
+      return backReduce(state, action) 
+    case 'test':
+      alert('test!!')
     default:
       return {
         cardname:state.cardname,
@@ -66,7 +66,19 @@ function stampReduce(state, action){
     cardname:state.cardname,
     fontcolor:state.fontcolor,
     currentStamp:state.currentStamp,
+    backcolor:state.backcolor,
     stampcheck:newstamp,
+    mode:'main'
+  }
+}
+function backReduce(state, action){
+  let backcolor = action.backcolor.slice()
+  return{
+    cardname:state.cardname,
+    fontcolor:state.fontcolor,
+    currentStamp:state.currentStamp,
+    stampcheck:state.stampcheck,
+    backcolor:backcolor,
     mode:'main'
   }
 }
@@ -78,10 +90,18 @@ export function nameAction(name){
     cardname:name
   }
 }
+
 export function stampAction(stamp){
   return {
     type:'STAMP',
     stampcheck:stamp
+  }
+}
+
+export function backAction(backcolor){
+  return {
+    type:'BACK',
+    backcolor:backcolor
   }
 }
 

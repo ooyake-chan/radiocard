@@ -2,6 +2,15 @@ import React, { Component } from 'react';
 import gire_icon from '../static/gire_icon.svg'
 import back_icon from '../static/backsample_1.jpg'
 
+const stamp = [
+  require('../static/stamp_cake.svg'),
+  require('../static/stamp_che.svg'),
+  require('../static/stamp_chekin.svg'),
+  require('../static/stamp_rose.svg'),
+  require('../static/stamp_sun.svg'),
+  require('../static/stamp_good.svg'),
+]
+
 export function SetMain(props){
   return (
     <div>
@@ -13,7 +22,7 @@ export function SetMain(props){
         </div>
         <div onClick={()=>props.onClick('STAMP')}>
           <img src={gire_icon}/>
-          <p>スタンプを作る</p>
+          <p>スタンプを変える</p>
         </div>
         <div onClick={()=>props.onClick('NAME')}>
           <span className='block'>Name</span>
@@ -53,19 +62,31 @@ export function SetBack(props){
 export function SetStamp(props){
   return (
     <div>
-      <h2>スタンプを作る</h2>
+      <h2>スタンプを変える</h2>
       <div className="flex">
         <div onClick={()=>props.onClick('BACK')}>
-          <img src={back_icon}/>
+          <img src={stamp[0]}/>
           <p>スタンプ1</p>
         </div>
         <div onClick={()=>props.onClick('STAMP')}>
-          <img src={gire_icon}/>
+          <img src={stamp[1]}/>
           <p>スタンプ2</p>
         </div>
-        <div onClick={()=>props.onClick('NAME')}>
-          <span className='block'>Name</span>
+        <div onClick={()=>props.onClick('BACK')}>
+          <img src={stamp[2]}/>
           <p>スタンプ3</p>
+        </div>
+        <div onClick={()=>props.onClick('STAMP')}>
+          <img src={stamp[3]}/>
+          <p>スタンプ4</p>
+        </div>
+        <div onClick={()=>props.onClick('BACK')}>
+          <img src={stamp[4]}/>
+          <p>スタンプ5</p>
+        </div>
+        <div onClick={()=>props.onClick('STAMP')}>
+          <img src={stamp[5]}/>
+          <p>スタンプ6</p>
         </div>
       </div>
       <div>

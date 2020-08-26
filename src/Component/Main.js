@@ -8,10 +8,11 @@ class Main extends Component{
   constructor(props){
     super(props)
   }
-
+  
   render (){
     let d = new Date()
     let date = d.getFullYear()+'ねん' + (1+ d.getMonth()) + 'がつ'
+    let colorChange = this.props.colorChange
     return <main>
       <div className="main">
         <div className="img_wrapper">
@@ -21,7 +22,7 @@ class Main extends Component{
         </div>
         <Stamps />
       </div>
-        <Setting/>
+        <Setting colorChange={colorChange}/>
     </main>
   }
 }

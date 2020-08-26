@@ -51,16 +51,9 @@ button {
     box-shadow: 0 8px 6px rgba(0, 0, 0, 0.15);
   }
 }
-.mBack{
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(67, 67, 67, 0.7);
-  z-index: 1;
-}
   
 .modal_wrapper{
+  position: relative;
   &:not(:target){
     opacity: 0;
     visibility: hidden;
@@ -78,9 +71,15 @@ button {
     vertical-align: middle;
     content: ""
   }
-
+  .mBack{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(67, 67, 67, 0.7);
+    z-index: 1;
+  }
 }
-
 .modal{
   position: absolute;
   top: 50%;
@@ -90,6 +89,7 @@ button {
   background-color: white;
   border-radius: 5px;
   text-align: center;
+  z-index: 999;
   & h1{
     border-radius: 5px;
     margin: 0;
@@ -102,6 +102,7 @@ button {
     margin-top: 20px;
     font-size: 0.9em;
   }
+  
 }
 
 .first{

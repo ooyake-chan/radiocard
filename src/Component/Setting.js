@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
 import gire_icon from '../static/gire_icon.svg'
+import { backAction } from '../Store'
 import { SetMain, SetBack, SetStamp, SetDetail, SetName } from './SetParts'
 
 class Setting extends Component{
@@ -12,6 +13,7 @@ class Setting extends Component{
     }
     this.doAction = this.doAction.bind(this)
     this.doChange = this.doChange.bind(this)
+    console.log(props.colorChange)
   }
   doAction(page){
     this.setState({
@@ -20,10 +22,10 @@ class Setting extends Component{
   }
   doChange(e){
     let color = e.target.value
-    this.setState({
-      backcolor:color
-    })
-  }
+    let action = backAction(color)
+    this.props.dispatch(action)
+    this.props.colorChange(color)
+   }
   render(){
     let currentPage = ()=> {
       switch(this.state.page){
@@ -43,7 +45,7 @@ class Setting extends Component{
   }
     return (
       <div className="set-wrapper">
-        <input id="set-input" type="checkbox" checked="checked" />
+        <input id="set-input" type="checkbox" />
         <label className="s-back" for="set-input"/>
         <div className="setting">
           <label for="set-input"><img src={gire_icon} className="gire" /></label>
