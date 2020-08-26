@@ -70,27 +70,27 @@ export function SetStamp(props){
     <div>
       <h2>スタンプを変える</h2>
       <div className="flex">
-        <div onClick={props.stampChange('testmessage')}>
+        <div onClick={()=> props.stampChange(0)}>
           <img src={stamp[0]}/>
           <p>スタンプ1</p>
         </div>
-        <div onClick={props.stampChange(1)}>
+        <div onClick={()=> props.stampChange(1)}>
           <img src={stamp[1]}/>
           <p>スタンプ2</p>
         </div>
-        <div onClick={props.stampChange(2)}>
+        <div onClick={()=> props.stampChange(2)}>
           <img src={stamp[2]}/>
           <p>スタンプ3</p>
         </div>
-        <div onClick={props.stampChange(3)}>
+        <div onClick={()=> props.stampChange(3)}>
           <img src={stamp[3]}/>
           <p>スタンプ4</p>
         </div>
-        <div onClick={props.stampChange(4)}>
+        <div onClick={()=> props.stampChange(4)}>
           <img src={stamp[4]}/>
           <p>スタンプ5</p>
         </div>
-        <div onClick={props.stampChange(5)}>
+        <div onClick={()=> props.stampChange(5)}>
           <img src={stamp[5]}/>
           <p>スタンプ6</p>
         </div>

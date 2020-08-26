@@ -20,7 +20,7 @@ class Main extends Component{
           <img src={Img}/>
           <h2>{date}</h2>
         </div>
-        <Stamps />
+        <Stamps/>
       </div>
         <Setting colorChange={colorChange}/>
     </main>

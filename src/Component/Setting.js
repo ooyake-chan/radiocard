@@ -30,10 +30,9 @@ class Setting extends Component{
    }
    
   stampChange(stampIndex){
-    let action = currentStampAction(stampIndex)
-    console.log(stampIndex)
-    console.log(action)
-    // this.props.dispatch(action)
+    let Index = stampIndex
+    let action = currentStampAction(Index)
+    this.props.dispatch(action)
   }
 
   render(){
@@ -44,7 +43,7 @@ class Setting extends Component{
       case 'BACK' :
         return  <SetBack pageChange={this.pageChange} colorChange={()=>this.colorChange} />
       case 'STAMP' :
-        return  <SetStamp pageChange={this.pageChange} stampChange={()=>this.stampChange}/>
+        return  <SetStamp pageChange={this.pageChange} stampChange={this.stampChange}/>
       case 'NAME' :
         return  <SetName pageChange={this.pageChange} />
       case 'DETAIL' :

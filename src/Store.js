@@ -2,14 +2,14 @@ import { createStore } from 'redux'
 
 //ステートの値
 const state_value = {
-  cardname:'',
-  backcolor:'',
+  cardname:'null',
+  backcolor:'#cef0ff',
   fontcolor:'#434343',
-  stamp:'',
+  stamp:0,
   stampcheck:Array().fill(false),
   mode:'main',
   blacklist:['mode'],
-  whitelist:['cardname', 'stampcheck', 'backcolor']
+  whitelist:['cardname', 'stampcheck', 'backcolor', 'stamp']
 }
 
 // レデューサー
@@ -87,10 +87,10 @@ function currentStampReduce(state, action){
   console.log(stamp)
   return{
     cardname:state.cardname,
-  //   fontcolor:state.fontcolor,
-    // stamp:stamp,
-  //   stampcheck:state.stampcheck,
-  //   backcolor:state.backcolor,
+    fontcolor:state.fontcolor,
+    stamp:stamp,
+    stampcheck:state.stampcheck,
+    backcolor:state.backcolor,
     mode:'main'
   }
 }
@@ -123,4 +123,4 @@ export function currentStampAction(stamp){
     stamp:stamp
   }
 }
-export default createStore(cardReducer)
+export default createStore(cardReducer, state_value)

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
 import { stampAction } from '../Store'
-import image from '../static/stamp_cake.svg'
 
 const stamp = [
   require('../static/stamp_cake.svg'),
@@ -15,9 +14,20 @@ const stamp = [
 class Stamp extends Component{
   constructor(props){
     super(props)
+    if(this.props.stamp === undefined){
+      this.state = {
+        index:'0'
+      }
+      }else{
+        this.state = {
+          index:this.props.stamp
+        }
+      }
   }
+  
   render(){
-  let img = (<img src={stamp[3]}/>)
+  let index = this.state.index
+  let img = (<img src={stamp[index]}/>)
   return( 
     <div className="stampwrap">
       <button className="stamp" onClick={this.props.onClick}>
@@ -40,6 +50,8 @@ class Stamps extends Component{
         stampcheck : this.props.stampcheck.slice()
       }
     }
+
+    
     this.doAction = this.doAction.bind(this)
   }
 
@@ -86,4 +98,4 @@ function mappingState(state){
   }
 }
 
-export default connect(mappingState)(Stamps)
+export default connect((state)=>state)(Stamps)
