@@ -2,13 +2,19 @@ import React, { Component } from 'react';
 import gire_icon from '../static/gire_icon.svg'
 import back_icon from '../static/backsample_1.jpg'
 
+let stamp1 = require('../static/stamp_cake.svg')
+let stamp2 = require('../static/stamp_che.svg')
+let stamp3 = require('../static/stamp_chekin.svg')
+let stamp4 = require('../static/stamp_rose.svg')
+let stamp5 = require('../static/stamp_sun.svg')
+let stamp6 = require('../static/stamp_good.svg')
 const stamp = [
-  require('../static/stamp_cake.svg'),
-  require('../static/stamp_che.svg'),
-  require('../static/stamp_chekin.svg'),
-  require('../static/stamp_rose.svg'),
-  require('../static/stamp_sun.svg'),
-  require('../static/stamp_good.svg'),
+  stamp1,
+  stamp2,
+  stamp3,
+  stamp4,
+  stamp5,
+  stamp6,  
 ]
 
 export function SetMain(props){
@@ -64,27 +70,27 @@ export function SetStamp(props){
     <div>
       <h2>スタンプを変える</h2>
       <div className="flex">
-        <div onClick={()=>props.pageChange('BACK')}>
+        <div onClick={props.stampChange('testmessage')}>
           <img src={stamp[0]}/>
           <p>スタンプ1</p>
         </div>
-        <div onClick={()=>props.pageChange('STAMP')}>
+        <div onClick={props.stampChange(1)}>
           <img src={stamp[1]}/>
           <p>スタンプ2</p>
         </div>
-        <div onClick={()=>props.pageChange('BACK')}>
+        <div onClick={props.stampChange(2)}>
           <img src={stamp[2]}/>
           <p>スタンプ3</p>
         </div>
-        <div onClick={()=>props.pageChange('STAMP')}>
+        <div onClick={props.stampChange(3)}>
           <img src={stamp[3]}/>
           <p>スタンプ4</p>
         </div>
-        <div onClick={()=>props.pageChange('BACK')}>
+        <div onClick={props.stampChange(4)}>
           <img src={stamp[4]}/>
           <p>スタンプ5</p>
         </div>
-        <div onClick={()=>props.pageChange('STAMP')}>
+        <div onClick={props.stampChange(5)}>
           <img src={stamp[5]}/>
           <p>スタンプ6</p>
         </div>

@@ -5,7 +5,7 @@ const state_value = {
   cardname:'',
   backcolor:'',
   fontcolor:'#434343',
-  currentStamp:'../public/img/stamp_good.svg',
+  stamp:'',
   stampcheck:Array().fill(false),
   mode:'main',
   blacklist:['mode'],
@@ -39,13 +39,13 @@ export function cardReducer(state = state_value, action){
       return stampReduce(state, action) 
     case 'BACK':
       return backReduce(state, action) 
-    case 'test':
-      alert('test!!')
+    case 'CURRENTSTAMP':
+      return currentStampReduce(state, action)
     default:
       return {
         cardname:state.cardname,
         fontcolor:state.fontcolor,
-        currentStamp:state.currentStamp,
+        stamp:state.stamp,
         stampcheck:state.stampcheck,
         mode:'main',
       }
@@ -65,7 +65,7 @@ function stampReduce(state, action){
   return{
     cardname:state.cardname,
     fontcolor:state.fontcolor,
-    currentStamp:state.currentStamp,
+    stamp:state.stamp,
     backcolor:state.backcolor,
     stampcheck:newstamp,
     mode:'main'
@@ -76,9 +76,21 @@ function backReduce(state, action){
   return{
     cardname:state.cardname,
     fontcolor:state.fontcolor,
-    currentStamp:state.currentStamp,
+    stamp:state.stamp,
     stampcheck:state.stampcheck,
     backcolor:backcolor,
+    mode:'main'
+  }
+}
+function currentStampReduce(state, action){
+  let stamp = action.stamp
+  console.log(stamp)
+  return{
+    cardname:state.cardname,
+  //   fontcolor:state.fontcolor,
+    // stamp:stamp,
+  //   stampcheck:state.stampcheck,
+  //   backcolor:state.backcolor,
     mode:'main'
   }
 }
@@ -105,4 +117,10 @@ export function backAction(backcolor){
   }
 }
 
+export function currentStampAction(stamp){
+  return {
+    type:'CURRENTSTAMP',
+    stamp:stamp
+  }
+}
 export default createStore(cardReducer)

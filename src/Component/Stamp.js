@@ -3,12 +3,21 @@ import {connect} from 'react-redux'
 import { stampAction } from '../Store'
 import image from '../static/stamp_cake.svg'
 
+const stamp = [
+  require('../static/stamp_cake.svg'),
+  require('../static/stamp_che.svg'),
+  require('../static/stamp_chekin.svg'),
+  require('../static/stamp_rose.svg'),
+  require('../static/stamp_sun.svg'),
+  require('../static/stamp_good.svg'),
+]
+
 class Stamp extends Component{
   constructor(props){
     super(props)
   }
   render(){
-  let img = (<img src={image}/>)
+  let img = (<img src={stamp[3]}/>)
   return( 
     <div className="stampwrap">
       <button className="stamp" onClick={this.props.onClick}>
