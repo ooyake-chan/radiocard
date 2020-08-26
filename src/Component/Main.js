@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
+import { currentStampAction } from '../Store'
 import Stamps from './Stamp'
 import Setting from './Setting'
 import Img from '../static/backsample_1.jpg'
@@ -7,6 +8,13 @@ import Img from '../static/backsample_1.jpg'
 class Main extends Component{
   constructor(props){
     super(props)
+    this.stampChange = this.stampChange.bind(this)
+  }
+
+  stampChange(stampIndex){
+    let Index = stampIndex
+    let action = currentStampAction(Index)
+    this.props.dispatch(action)
   }
   
   render (){
@@ -20,9 +28,9 @@ class Main extends Component{
           <img src={Img}/>
           <h2>{date}</h2>
         </div>
-        <Stamps/>
+        <Stamps />
       </div>
-        <Setting colorChange={colorChange}/>
+        <Setting colorChange={colorChange} stampChange={this.stampChange}/>
     </main>
   }
 }

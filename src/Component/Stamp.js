@@ -14,20 +14,10 @@ const stamp = [
 class Stamp extends Component{
   constructor(props){
     super(props)
-    if(this.props.stamp === undefined){
-      this.state = {
-        index:'0'
-      }
-      }else{
-        this.state = {
-          index:this.props.stamp
-        }
-      }
   }
   
   render(){
-  let index = this.state.index
-  let img = (<img src={stamp[index]}/>)
+  let img = (<img src={stamp[0]}/>)
   return( 
     <div className="stampwrap">
       <button className="stamp" onClick={this.props.onClick}>
