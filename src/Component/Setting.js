@@ -11,16 +11,18 @@ class Setting extends Component{
       page:'FIRST',
       backcolor:'',
     }
-    this.doAction = this.doAction.bind(this)
-    this.doChange = this.doChange.bind(this)
+    this.pageChange = this.pageChange.bind(this)
+    this.colorChange = this.colorChange.bind(this)
     console.log(props.colorChange)
   }
-  doAction(page){
+
+  pageChange(page){
     this.setState({
       page:page
     })
   }
-  doChange(e){
+
+  colorChange(e){
     let color = e.target.value
     let action = backAction(color)
     this.props.dispatch(action)
@@ -30,17 +32,17 @@ class Setting extends Component{
     let currentPage = ()=> {
       switch(this.state.page){
       case 'FIRST' :
-      return  <SetMain onClick={this.doAction} />
+      return  <SetMain pageChange={this.pageChange} />
       case 'BACK' :
-        return  <SetBack onClick={this.doAction} onChange={()=>this.doChange} />
+        return  <SetBack pageChange={this.pageChange} colorChange={()=>this.colorChange} />
       case 'STAMP' :
-        return  <SetStamp onClick={this.doAction} />
+        return  <SetStamp pageChange={this.pageChange} />
       case 'NAME' :
-        return  <SetName onClick={this.doAction} />
+        return  <SetName pageChange={this.pageChange} />
       case 'DETAIL' :
-        return  <SetDetail onClick={this.doAction} />  
+        return  <SetDetail pageChange={this.pageChange} />  
       default :
-        return  <SetMain onClick={this.doAction} />
+        return  <SetMain pageChange={this.pageChange} />
     }
   }
     return (

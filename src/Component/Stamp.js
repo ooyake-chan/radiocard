@@ -7,14 +7,11 @@ class Stamp extends Component{
   constructor(props){
     super(props)
   }
-  style = {
-    backgroundImage:image,
-  }
   render(){
   let img = (<img src={image}/>)
   return( 
     <div className="stampwrap">
-      <button className="stamp" onClick={this.props.onClick} style={this.style}>
+      <button className="stamp" onClick={this.props.onClick}>
       {this.props.check ? img : ''}
       </button>
   <p>{this.props.day}</p>
