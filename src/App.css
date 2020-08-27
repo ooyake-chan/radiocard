@@ -52,15 +52,6 @@ button {
   box-shadow: 0 8px 6px rgba(0, 0, 0, 0.15);
 }
 
-.mBack {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(67, 67, 67, 0.7);
-  z-index: 1;
-}
-
 .modal_wrapper:not(:target) {
   opacity: 0;
   visibility: hidden;
@@ -81,6 +72,14 @@ button {
   content: "";
 }
 
+.mBack {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(67, 67, 67, 0.7);
+}
+
 .modal {
   position: absolute;
   top: 50%;
@@ -90,6 +89,7 @@ button {
   background-color: white;
   border-radius: 5px;
   text-align: center;
+  z-index: 1;
 }
 
 .modal h1 {
@@ -97,11 +97,11 @@ button {
   margin: 0;
 }
 
-.modal .mBody {
+.mBody {
   padding: 40px;
 }
 
-.modal .mBody .yel_btn {
+.mBody .yel_btn {
   padding: 10px 13px;
   margin-top: 20px;
   font-size: 0.9em;

@@ -53,7 +53,6 @@ button {
 }
   
 .modal_wrapper{
-  position: relative;
   &:not(:target){
     opacity: 0;
     visibility: hidden;
@@ -71,39 +70,38 @@ button {
     vertical-align: middle;
     content: ""
   }
+}
   .mBack{
     position: absolute;
     top: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(67, 67, 67, 0.7);
-    z-index: 1;
   }
-}
-.modal{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 95%;
-  background-color: white;
-  border-radius: 5px;
-  text-align: center;
-  z-index: 999;
-  & h1{
+  .modal{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 95%;
+    background-color: white;
     border-radius: 5px;
-    margin: 0;
+    text-align: center;
+    z-index: 1;
+    & h1{
+      border-radius: 5px;
+      margin: 0;
+    }
   }
-  .mBody{
-    padding: 40px;
-  }
-  .mBody .yel_btn{
-    padding: 10px 13px;
-    margin-top: 20px;
-    font-size: 0.9em;
-  }
-  
-}
+    .mBody{
+      padding: 40px;
+    }
+    .mBody .yel_btn{
+      padding: 10px 13px;
+      margin-top: 20px;
+      font-size: 0.9em;
+    }
+
 
 .first{
   width: 90%;

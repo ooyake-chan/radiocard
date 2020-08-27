@@ -75,7 +75,7 @@ function stampReduce(state, action){
   return{
     cardname:state.cardname,
     fontcolor:state.fontcolor,
-    stampIndex:state.stamp,
+    stampIndex:state.stampIndex,
     backcolor:state.backcolor,
     stampcheck:newstamp,
     mode:'main'
@@ -86,7 +86,7 @@ function backReduce(state, action){
   return{
     cardname:state.cardname,
     fontcolor:state.fontcolor,
-    stampIndex:state.stamp,
+    stampIndex:state.stampIndex,
     stampcheck:state.stampcheck,
     backcolor:backcolor,
     mode:'main'
