@@ -66,7 +66,7 @@ function nameReduce(state, action){
   return {
     cardname:name,
     fontcolor:state.fontcolor,
-    stampIndex:0,
+    stampIndex:state.stampIndex,
     backcolor:state.backcolor,
     stampcheck:state.stampcheck,
     mode:'main',

@@ -39,6 +39,9 @@ button {
 .flex{
   display: flex;
 }
+.center{
+  text-align: center;
+}
 .yel_btn{
   padding:15px 30px;
   border-radius: 10px;
@@ -224,7 +227,15 @@ button {
     }
     button{
       border: 2px solid $main-color;
+      margin-top: 40px;
       color: $main-color;
+    }
+    .yel_btn{
+      margin-top: 20px;
+      padding: 0.5em 1.5em;
+      border: none;
+      color: $text-color;
+      font-size: 1em;
     }
   }
   .s-back{

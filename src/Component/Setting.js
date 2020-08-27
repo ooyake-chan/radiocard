@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
 import gire_icon from '../static/gire_icon.svg'
-import { backAction, fontAction } from '../Store'
-import { SetMain, SetBack, SetStamp, SetDetail, SetName } from './SetParts'
+import { backAction, fontAction, nameAction } from '../Store'
+import { SetMain, SetBack, SetStamp, SetDetail, SetName, stamp } from './SetParts'
+
+const img ={
+  gire:require('../static/gire_icon.svg'),
+  good:require('../static/stamp_good.svg'),
+}
+
 
 class Setting extends Component{
   constructor(props){
@@ -15,6 +21,7 @@ class Setting extends Component{
     this.colorChange = this.colorChange.bind(this)
     this.getStamp = this.getStamp.bind(this)
     this.fontChange = this.fontChange.bind(this)
+    this.nameChange = this.nameChange.bind(this)
   }
 
   pageChange(page){
@@ -42,6 +49,14 @@ class Setting extends Component{
      this.props.fontChange(color)
    }
 
+   nameChange(){
+     let target = document.getElementById("nameform")
+     let name = target.value
+     let action = nameAction(name)
+     console.log(action)
+     this.props.dispatch(action)
+   }
+
   render(){
     let currentPage = ()=> {
       switch(this.state.page){
@@ -52,7 +67,11 @@ class Setting extends Component{
       case 'STAMP' :
         return  <SetStamp pageChange={this.pageChange} getStamp={this.getStamp}/>
       case 'NAME' :
-        return  <SetName pageChange={this.pageChange} fontChange={()=>this.fontChange} />
+        return  <SetName 
+        pageChange={this.pageChange} 
+        fontChange={()=>this.fontChange}
+        nameChange={()=>this.nameChange}
+        />
       case 'DETAIL' :
         return  <SetDetail pageChange={this.pageChange} />  
       default :

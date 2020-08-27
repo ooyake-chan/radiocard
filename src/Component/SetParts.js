@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import gire_icon from '../static/gire_icon.svg'
 import back_icon from '../static/backsample_1.jpg'
 
-const stamp = [
+export const stamp = [
   require('../static/stamp_cake.svg'),
   require('../static/stamp_che.svg'),
   require('../static/stamp_chekin.svg'),
@@ -10,6 +10,10 @@ const stamp = [
   require('../static/stamp_sun.svg'),
   require('../static/stamp_good.svg')
 ]
+const img ={
+  gire:require('../static/gire_icon.svg'),
+  good:require('../static/stamp_good.svg'),
+}
 
 export function SetMain(props){
   return (
@@ -21,7 +25,7 @@ export function SetMain(props){
         <p>背景を変える</p>
         </div>
         <div onClick={()=>props.pageChange('STAMP')}>
-          <img src={gire_icon}/>
+          <img src={img.good}/>
           <p>スタンプを変える</p>
         </div>
         <div onClick={()=>props.pageChange('NAME')}>
@@ -101,11 +105,11 @@ export function SetName(props){
     <div>
       <h2>カードの名前を変える</h2>
       <div className="flex">
-        <div>
-          <img src={back_icon}/>
-          <button>変更する</button>
+        <div className="center">
+          <input type="text" id="nameform" placeholder="新しい名前を入力"/><br/>
+          <button onClick={props.nameChange()} className="yel_btn">変更する</button>
         </div>
-        <div>
+        <div className="center">
         <input type="color" value="#434343" onChange={props.fontChange()}/>
           <p>文字の色を選択</p>
         </div>

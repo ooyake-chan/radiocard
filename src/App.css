@@ -37,6 +37,10 @@ button {
   display: flex;
 }
 
+.center {
+  text-align: center;
+}
+
 .yel_btn {
   padding: 15px 30px;
   border-radius: 10px;
@@ -256,7 +260,16 @@ button {
 
 .set-wrapper .setting button {
   border: 2px solid #41c5ff;
+  margin-top: 40px;
   color: #41c5ff;
+}
+
+.set-wrapper .setting .yel_btn {
+  margin-top: 20px;
+  padding: 0.5em 1.5em;
+  border: none;
+  color: #434343;
+  font-size: 1em;
 }
 
 .set-wrapper .s-back {
