@@ -40,7 +40,7 @@ export function cardReducer(state = state_value, action){
         mode:'main'
       }
     case 'NAME':
-      return nameReduce(action) 
+      return nameReduce(state, action) 
     case 'STAMP':
       return stampReduce(state, action) 
     case 'BACK':
@@ -59,10 +59,14 @@ export function cardReducer(state = state_value, action){
 }
 
 // レデュースアクション
-function nameReduce(action){
+function nameReduce(state, action){
   let name = action.cardname
   return {
     cardname:name,
+    fontcolor:state.fontcolor,
+    stampIndex:0,
+    backcolor:state.backcolor,
+    stampcheck:state.stampcheck,
     mode:'main',
   }
 }
