@@ -4,7 +4,7 @@ import { createStore } from 'redux'
 const state_value = {
   cardname:'null',
   backcolor:'#cef0ff',
-  fontcolor:'#434343',
+  fontcolor:'#4359',
   stampIndex:0,
   stampcheck:Array().fill(false),
   mode:'main',
@@ -47,6 +47,8 @@ export function cardReducer(state = state_value, action){
       return backReduce(state, action) 
     case 'CURRENTSTAMP':
       return currentStampReduce(state, action)
+    case 'FONT':
+      return fontReduce(state, action)
     default:
       return {
         cardname:state.cardname,
@@ -105,6 +107,18 @@ function currentStampReduce(state, action){
   }
 }
 
+function fontReduce(state, action){
+  let fontcolor = action.fontcolor
+  return{
+    cardname:state.cardname,
+    fontcolor:fontcolor,
+    stampIndex:state.stampIndex,
+    stampcheck:state.stampcheck,
+    backcolor:state.backcolor,
+    mode:'main'
+  }
+}
+
 // アクションクリエイター
 export function nameAction(name){
   return {
@@ -133,4 +147,12 @@ export function currentStampAction(stamp){
     stampIndex:stamp
   }
 }
+
+export function fontAction(color){
+  return{
+    type:'FONT',
+    fontcolor:color
+  }
+}
+
 export default createStore(cardReducer, state_value)

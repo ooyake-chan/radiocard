@@ -101,12 +101,12 @@ export function SetName(props){
     <div>
       <h2>カードの名前を変える</h2>
       <div className="flex">
-        <div onClick={()=>props.pageChange('BACK')}>
+        <div>
           <img src={back_icon}/>
           <button>変更する</button>
         </div>
-        <div onClick={()=>props.pageChange('STAMP')}>
-          <img src={gire_icon}/>
+        <div>
+        <input type="color" value="#434343" onChange={props.fontChange()}/>
           <p>文字の色を選択</p>
         </div>
       </div>

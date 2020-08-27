@@ -8,7 +8,11 @@ import Img from '../static/backsample_1.jpg'
 class Main extends Component{
   constructor(props){
     super(props)
+    this.state = {
+      style:{color:this.props.fontcolor}
+    }
     this.stampChange = this.stampChange.bind(this)
+    this.fontChange = this.fontChange.bind(this)
   }
 
   stampChange(stampIndex){
@@ -16,13 +20,20 @@ class Main extends Component{
     let action = currentStampAction(Index)
     this.props.dispatch(action)
   }
+
+  fontChange(color){
+    this.setState({
+      style:{color:color}
+    })
+  }
   
   render (){
     let d = new Date()
     let date = d.getFullYear()+'ねん' + (1+ d.getMonth()) + 'がつ'
     let colorChange = this.props.colorChange
     let stampChange = this.stampChange
-    return <main>
+    let fontChange = this.fontChange
+    return <main style={this.state.style}>
       <div className="main">
         <div className="img_wrapper">
           <h1>{this.props.cardname}</h1>
@@ -31,7 +42,7 @@ class Main extends Component{
         </div>
         <Stamps />
       </div>
-        <Setting colorChange={colorChange} stampChange={stampChange}/>
+        <Setting colorChange={colorChange} stampChange={stampChange} fontChange={fontChange}/>
     </main>
   }
 }
@@ -43,4 +54,4 @@ function mappingState(state){
   }
 }
 
-export default connect((mappingState))(Main)
+export default connect((state)=>state)(Main)

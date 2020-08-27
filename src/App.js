@@ -41,7 +41,6 @@ class App extends Component {
   }
 
   colorChange(color){
-    console.log(color)
     this.setState({
       style:{backgroundColor:color}
     })

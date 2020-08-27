@@ -208,6 +208,7 @@ button {
   text-align: center;
   bottom: 0;
   transform: translateY(75%);
+  color: #434343;
 }
 
 .set-wrapper .setting {
@@ -222,7 +223,7 @@ button {
 
 .set-wrapper .setting .setConteiner {
   padding-bottom: 30px;
-  border-top: 30px solid;
+  border-top: 30px solid #434343;
   background-color: white;
 }
 
@@ -284,7 +285,7 @@ button {
 }
 
 #set-input:checked ~ .setting .setConteiner {
-  border-top: 10px solid;
+  border-top: 10px solid #434343;
 }
 
 #set-input:checked ~ .s-back {

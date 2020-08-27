@@ -186,6 +186,7 @@ button {
   text-align: center;
   bottom: 0;
   transform: translateY(75%);
+  color: $text-color;
   .setting{
     position: relative;
     z-index: 2;
@@ -195,7 +196,7 @@ button {
     }
     .setConteiner{
       padding-bottom: 30px;
-      border-top: 30px solid ;
+      border-top: 30px solid $text-color;
       background-color:white;
       & img{
         width: 45px;
@@ -250,7 +251,7 @@ button {
     transition: 1s;
   }
   ~.setting .setConteiner{
-    border-top:10px solid;
+    border-top:10px solid $text-color;
   }
   ~ .s-back{
     display: block;

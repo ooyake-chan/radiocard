@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
 import gire_icon from '../static/gire_icon.svg'
-import { backAction, currentStampAction } from '../Store'
+import { backAction, fontAction } from '../Store'
 import { SetMain, SetBack, SetStamp, SetDetail, SetName } from './SetParts'
 
 class Setting extends Component{
@@ -14,6 +14,7 @@ class Setting extends Component{
     this.pageChange = this.pageChange.bind(this)
     this.colorChange = this.colorChange.bind(this)
     this.getStamp = this.getStamp.bind(this)
+    this.fontChange = this.fontChange.bind(this)
   }
 
   pageChange(page){
@@ -31,8 +32,14 @@ class Setting extends Component{
 
    getStamp(i){
      let index = i
-     console.log(index)
      this.props.stampChange(index)
+   }
+
+   fontChange(e){
+     let color = e.target.value
+     let action = fontAction(color)
+     this.props.dispatch(action)
+     this.props.fontChange(color)
    }
 
   render(){
@@ -45,7 +52,7 @@ class Setting extends Component{
       case 'STAMP' :
         return  <SetStamp pageChange={this.pageChange} getStamp={this.getStamp}/>
       case 'NAME' :
-        return  <SetName pageChange={this.pageChange} />
+        return  <SetName pageChange={this.pageChange} fontChange={()=>this.fontChange} />
       case 'DETAIL' :
         return  <SetDetail pageChange={this.pageChange} />  
       default :
