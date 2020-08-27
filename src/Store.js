@@ -18,12 +18,18 @@ export function cardReducer(state = state_value, action){
     case 'FIRST' : 
       return {
         cardname:state.cardname,
+        backcolor:state.backcolor,
+        fontcolor:state.fontcolor,
+        stampIndex:state.stampIndex,
         stampcheck:state.stampcheck,
         mode:'first'
       }
     case 'MAIN' : 
       return {
         cardname:state.cardname,
+        backcolor:state.backcolor,
+        fontcolor:state.fontcolor,
+        stampIndex:state.stampIndex,
         stampcheck:state.stampcheck,
         mode:'main'
       }
@@ -83,7 +89,7 @@ function backReduce(state, action){
   }
 }
 function currentStampReduce(state, action){
-  let stamp = action.stamp
+  let stamp = action.stampIndex
   console.log(stamp)
   return{
     cardname:state.cardname,

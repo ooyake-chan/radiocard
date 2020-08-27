@@ -21,6 +21,7 @@ class Main extends Component{
     let d = new Date()
     let date = d.getFullYear()+'ねん' + (1+ d.getMonth()) + 'がつ'
     let colorChange = this.props.colorChange
+    let stampChange = this.stampChange
     return <main>
       <div className="main">
         <div className="img_wrapper">
@@ -30,7 +31,7 @@ class Main extends Component{
         </div>
         <Stamps />
       </div>
-        <Setting colorChange={colorChange} stampChange={this.stampChange}/>
+        <Setting colorChange={colorChange} stampChange={stampChange}/>
     </main>
   }
 }

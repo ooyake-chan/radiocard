@@ -13,6 +13,7 @@ class Setting extends Component{
     }
     this.pageChange = this.pageChange.bind(this)
     this.colorChange = this.colorChange.bind(this)
+    this.getStamp = this.getStamp.bind(this)
   }
 
   pageChange(page){
@@ -28,6 +29,12 @@ class Setting extends Component{
     this.props.colorChange(color)
    }
 
+   getStamp(i){
+     let index = i
+     console.log(index)
+     this.props.stampChange(index)
+   }
+
   render(){
     let currentPage = ()=> {
       switch(this.state.page){
@@ -36,7 +43,7 @@ class Setting extends Component{
       case 'BACK' :
         return  <SetBack pageChange={this.pageChange} colorChange={()=>this.colorChange} />
       case 'STAMP' :
-        return  <SetStamp pageChange={this.pageChange} stampChange={this.props.stampChange}/>
+        return  <SetStamp pageChange={this.pageChange} getStamp={this.getStamp}/>
       case 'NAME' :
         return  <SetName pageChange={this.pageChange} />
       case 'DETAIL' :

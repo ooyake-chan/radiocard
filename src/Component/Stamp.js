@@ -17,7 +17,7 @@ class Stamp extends Component{
   }
   
   render(){
-  let img = (<img src={stamp[0]}/>)
+  let img = (<img src={stamp[this.props.index]}/>)
   return( 
     <div className="stampwrap">
       <button className="stamp" onClick={this.props.onClick}>
@@ -40,8 +40,6 @@ class Stamps extends Component{
         stampcheck : this.props.stampcheck.slice()
       }
     }
-
-    
     this.doAction = this.doAction.bind(this)
   }
 
@@ -57,12 +55,14 @@ class Stamps extends Component{
 
   renderStamp(){
     let s = []
+    let index = this.props.stampIndex
     for(let i=0; i<=30; i++){
      s.push(
       <Stamp 
           key={i} 
           day={i+1}
-          check={this.state.stampcheck[i]} 
+          check={this.state.stampcheck[i]}
+          index={index} 
           onClick={()=>this.doAction(i)}
         />)
     }
@@ -73,9 +73,7 @@ class Stamps extends Component{
     let stamps = this.renderStamp()
     return(
       <div className="stamps">
-        
           {stamps}
-
     </div>
       
     )
