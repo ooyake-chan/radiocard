@@ -4,12 +4,13 @@ import { createStore } from 'redux'
 const state_value = {
   cardname:'null',
   backcolor:'#cef0ff',
-  fontcolor:'#4359',
+  fontcolor:'#434343',
+  image:require('./static/backsample_1.jpg'),
   stampIndex:0,
   stampcheck:Array().fill(false),
   mode:'main',
   blacklist:['mode'],
-  whitelist:['cardname', 'stampcheck', 'backcolor', 'stamp']
+  whitelist:['cardname', 'stampcheck', 'backcolor', 'stamp', 'stampIndex', 'image']
 }
 
 // レデューサー
@@ -20,6 +21,7 @@ export function cardReducer(state = state_value, action){
         cardname:state.cardname,
         backcolor:state.backcolor,
         fontcolor:state.fontcolor,
+        image:state.image,
         stampIndex:state.stampIndex,
         stampcheck:state.stampcheck,
         mode:'first'
@@ -29,6 +31,7 @@ export function cardReducer(state = state_value, action){
         cardname:state.cardname,
         backcolor:state.backcolor,
         fontcolor:state.fontcolor,
+        image:state.image,
         stampIndex:state.stampIndex,
         stampcheck:state.stampcheck,
         mode:'main'
@@ -66,6 +69,7 @@ function nameReduce(state, action){
   return {
     cardname:name,
     fontcolor:state.fontcolor,
+    image:state.image,
     stampIndex:state.stampIndex,
     backcolor:state.backcolor,
     stampcheck:state.stampcheck,
@@ -77,6 +81,7 @@ function stampReduce(state, action){
   return{
     cardname:state.cardname,
     fontcolor:state.fontcolor,
+    image:state.image,
     stampIndex:state.stampIndex,
     backcolor:state.backcolor,
     stampcheck:newstamp,
@@ -88,6 +93,7 @@ function backReduce(state, action){
   return{
     cardname:state.cardname,
     fontcolor:state.fontcolor,
+    image:state.image,
     stampIndex:state.stampIndex,
     stampcheck:state.stampcheck,
     backcolor:backcolor,
@@ -100,6 +106,7 @@ function currentStampReduce(state, action){
   return{
     cardname:state.cardname,
     fontcolor:state.fontcolor,
+    image:state.image,
     stampIndex:stamp,
     stampcheck:state.stampcheck,
     backcolor:state.backcolor,
@@ -112,6 +119,7 @@ function fontReduce(state, action){
   return{
     cardname:state.cardname,
     fontcolor:fontcolor,
+    image:state.image,
     stampIndex:state.stampIndex,
     stampcheck:state.stampcheck,
     backcolor:state.backcolor,

@@ -59,7 +59,7 @@ class First extends Component{
         </div>
         <a className="yel_btn" href="#modal">カードを作る</a>
       </div>
-        <Modal name="カードをつくる" style={modalStyle} body={modalBody}/>
+        <Modal id="modal" name="カードをつくる" style={modalStyle} body={modalBody}/>
     </div>
   }
 }

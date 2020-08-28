@@ -162,6 +162,15 @@ button {
   letter-spacing: 0.2em;
 }
 
+.main .modal_wrapper .modal {
+  position: fixed;
+}
+
+.main .modal_wrapper .mBack {
+  left: 0;
+  z-index: 1;
+}
+
 .stamps {
   width: 100%;
   max-width: 1000px;

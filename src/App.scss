@@ -147,6 +147,16 @@ button {
       letter-spacing: 0.2em;
     }
   }
+  .modal_wrapper{
+    .modal{
+      position: fixed;
+    }
+    .mBack{
+      // height: 300%;
+      left: 0;
+      z-index: 1;
+    }
+  }
 }
 .stamps{
   width: 100%;

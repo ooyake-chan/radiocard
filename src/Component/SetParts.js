@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Modal from './Modal'
 import gire_icon from '../static/gire_icon.svg'
 import back_icon from '../static/backsample_1.jpg'
 
@@ -48,13 +49,13 @@ export function SetBack(props){
         <input type="color" value="#cef0ff" onChange={props.colorChange()}/>
           <p>色を選択</p>
         </div>
-        <div onClick={()=>props.pageChange('STAMP')}>
+        <div>
           <img src={gire_icon}/>
-          <p>画像を変える</p>
+          <a className="yel_btn" href="#img_up_modal">画像を変える</a>
         </div>
         <div onClick={()=>props.pageChange('NAME')}>
           <span className='block'>Name</span>
-          <p>全体/一部の切り替え</p>
+          <p>全体/一部の切り替え</p> 
         </div>
       </div>
       <div>

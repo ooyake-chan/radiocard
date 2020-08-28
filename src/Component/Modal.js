@@ -6,7 +6,7 @@ class Modal extends Component{
     super(props)
   }
   render(){
-    return <div id="modal" className="modal_wrapper">
+    return <div id={this.props.id} className="modal_wrapper">
         <a className="mBack" href="#!"></a>
         <div className="modal">
           <h1 style={this.props.style}>{this.props.name}</h1>
