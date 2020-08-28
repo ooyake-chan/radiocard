@@ -93,6 +93,7 @@ button {
   background-color: white;
   border-radius: 5px;
   text-align: center;
+  color: #434343;
   z-index: 1;
 }
 
@@ -167,6 +168,7 @@ button {
 }
 
 .main .modal_wrapper .mBack {
+  height: 100%;
   left: 0;
   z-index: 1;
 }
@@ -312,5 +314,20 @@ button {
 
 #set-input:checked ~ .s-back {
   display: block;
+}
+
+#img_up_modal span {
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+#img_up_modal #preview_img {
+  width: 90%;
+}
+
+#img_up_modal a {
+  display: inline-block;
+  margin-top: 20px;
+  color: #434343;
 }
 /*# sourceMappingURL=App.css.map */

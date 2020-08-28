@@ -50,8 +50,8 @@ export function SetBack(props){
           <p>色を選択</p>
         </div>
         <div>
-          <img src={gire_icon}/>
-          <a className="yel_btn" href="#img_up_modal">画像を変える</a>
+          <img src={gire_icon}/><br/>
+          <a href="#img_up_modal">画像を変える</a>
         </div>
         <div onClick={()=>props.pageChange('NAME')}>
           <span className='block'>Name</span>

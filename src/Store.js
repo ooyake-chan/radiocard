@@ -52,11 +52,15 @@ export function cardReducer(state = state_value, action){
       return currentStampReduce(state, action)
     case 'FONT':
       return fontReduce(state, action)
+    case 'IMG':
+      return imageReduce(state, action)
     default:
       return {
         cardname:state.cardname,
         fontcolor:state.fontcolor,
-        stampIndex:state.stamp,
+        image:state.image,
+        stampIndex:state.stampIndex,
+        backcolor:state.backcolor,
         stampcheck:state.stampcheck,
         mode:'main',
       }
@@ -127,6 +131,18 @@ function fontReduce(state, action){
   }
 }
 
+function imageReduce(state, action){
+  let image = action.image.slice()
+  return{
+    cardname:state.cardname,
+    fontcolor:state.fontcolor,
+    image:image,
+    stampIndex:state.stampIndex,
+    stampcheck:state.stampcheck,
+    backcolor:state.backcolor,
+    mode:'main'
+  }
+}
 // アクションクリエイター
 export function nameAction(name){
   return {
@@ -163,4 +179,10 @@ export function fontAction(color){
   }
 }
 
+export function imageAction(url){
+  return{
+    type:'IMG',
+    image:url
+  }
+}
 export default createStore(cardReducer, state_value)

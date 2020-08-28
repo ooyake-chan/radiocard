@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
-import { currentStampAction } from '../Store'
+import { currentStampAction, imageAction } from '../Store'
 import Stamps from './Stamp'
 import Setting from './Setting'
 import Modal from './Modal'
-import Img from '../static/backsample_1.jpg'
 
 class Main extends Component{
   constructor(props){
@@ -15,6 +14,7 @@ class Main extends Component{
     }
     this.stampChange = this.stampChange.bind(this)
     this.fontChange = this.fontChange.bind(this)
+    this.fileInput = this.fileInput.bind(this)
   }
 
   stampChange(stampIndex){
@@ -29,16 +29,6 @@ class Main extends Component{
     })
   }
 
-  // previewFile(file){
-  //   const reader = new FileReader()
-  //   const preview = document.getElementById("preview")
-  //   reader.onload = (e)=>{
-  //     const imageUrl = e.target.result
-  //     preview.appendChild(<img src={imageUrl}/>)
-  //   }
-  //   reader.readAsDataURL(file)
-  // }
-
   fileInput(){
     const inputImg = document.getElementById('input_img')
     const upImg = inputImg.files[0]
@@ -49,11 +39,26 @@ class Main extends Component{
         const imageUrl = e.target.result
         const img = document.createElement('img')
         img.src = imageUrl
+        img.id = 'preview_img'
         preview.appendChild(img)
       }
       reader.readAsDataURL(file)
     }
     previewFile(upImg)
+  }
+
+  imageChange(){
+    const preview = document.getElementById('preview_img')
+    let url = preview ? preview.src : false
+    if(!url){
+      return
+    }
+    let action = imageAction(url)
+    this.props.dispatch(action)
+    this.setState({
+      image:url
+    })
+    preview.src = ""
   }
   
   render (){
@@ -62,10 +67,12 @@ class Main extends Component{
     }
     const img_modal_Body = (
       <div>
-        <span id="preview"></span>
+        <span id="preview">
+          プレビュー
+          </span>
         <form>
-        <input type="file" id="input_img" onChange={this.fileInput}/>
-        <button className="yel_btn" value="画像を変更する"/>
+        <input type="file" id="input_img" onChange={this.fileInput}/><br/>
+        <a className="yel_btn" onClick={()=>this.imageChange()} href="#">画像を変更する</a>
         </form>
       </div>
     )
@@ -78,10 +85,9 @@ class Main extends Component{
       <div className="main">
         <div className="img_wrapper">
           <h1>{this.props.cardname}</h1>
-          <img src={Img}/>
+          <img src={this.state.image}/>
           <h2>{date}</h2>
         </div>
-        
         <Modal id="img_up_modal" name="画像のアップロード" style={img_modal_Style} body={img_modal_Body}/>
         <Stamps />
       </div>
