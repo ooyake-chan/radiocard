@@ -9,6 +9,7 @@ const state_value = {
   stampIndex:0,
   stampcheck:Array().fill(false),
   bgmode:true,
+  daymode:true,
   mode:'main',
   blacklist:['mode'],
   whitelist:['cardname', 'stampcheck', 'backcolor', 'stamp', 'stampIndex', 'image']
@@ -26,6 +27,7 @@ export function cardReducer(state = state_value, action){
         stampIndex:state.stampIndex,
         stampcheck:state.stampcheck,
         bgmode:state.bgmode,
+        daymode:state.daymode,
         mode:'first'
       }
     case 'MAIN' : 
@@ -37,6 +39,7 @@ export function cardReducer(state = state_value, action){
         stampIndex:state.stampIndex,
         stampcheck:state.stampcheck,
         bgmode:state.bgmode,
+        daymode:state.daymode,
         mode:'main'
       }
     case 'HOW' : 
@@ -59,6 +62,10 @@ export function cardReducer(state = state_value, action){
       return imageReduce(state, action)
     case 'BGSWITCH':
       return bgSwitchReduce(state)
+    case 'DAYSWITCH':
+      return daySwitchReduce(state)
+    case 'RESET':
+      return resetReduce()
     default:
       return {
         cardname:state.cardname,
@@ -68,6 +75,7 @@ export function cardReducer(state = state_value, action){
         backcolor:state.backcolor,
         stampcheck:state.stampcheck,
         bgmode:state.bgmode,
+        daymode:state.daymode,
         mode:'main',
       }
   }
@@ -84,6 +92,7 @@ function nameReduce(state, action){
     backcolor:state.backcolor,
     stampcheck:state.stampcheck,
     bgmode:state.bgmode,
+    daymode:state.daymode,
     mode:'main',
   }
 }
@@ -97,6 +106,7 @@ function stampReduce(state, action){
     backcolor:state.backcolor,
     stampcheck:newstamp,
     bgmode:state.bgmode,
+    daymode:state.daymode,
     mode:'main'
   }
 }
@@ -110,6 +120,7 @@ function backReduce(state, action){
     stampcheck:state.stampcheck,
     backcolor:backcolor,
     bgmode:state.bgmode,
+    daymode:state.daymode,
     mode:'main'
   }
 }
@@ -124,6 +135,7 @@ function currentStampReduce(state, action){
     stampcheck:state.stampcheck,
     backcolor:state.backcolor,
     bgmode:state.bgmode,
+    daymode:state.daymode,
     mode:'main'
   }
 }
@@ -138,6 +150,7 @@ function fontReduce(state, action){
     stampcheck:state.stampcheck,
     backcolor:state.backcolor,
     bgmode:state.bgmode,
+    daymode:state.daymode,
     mode:'main'
   }
 }
@@ -152,6 +165,7 @@ function imageReduce(state, action){
     stampcheck:state.stampcheck,
     backcolor:state.backcolor,
     bgmode:state.bgmode,
+    daymode:state.daymode,
     mode:'main'
   }
 }
@@ -165,7 +179,36 @@ function bgSwitchReduce(state){
     stampcheck:state.stampcheck,
     backcolor:state.backcolor,
     bgmode:!state.bgmode,
+    daymode:state.daymode,
     mode:'main'
+  }
+}
+
+function daySwitchReduce(state){
+  return{
+    cardname:state.cardname,
+    fontcolor:state.fontcolor,
+    image:state.image,
+    stampIndex:state.stampIndex,
+    stampcheck:state.stampcheck,
+    backcolor:state.backcolor,
+    bgmode:state.bgmode,
+    daymode:!state.daymode,
+    mode:'main'
+  }
+}
+
+function resetReduce(){
+  return{
+    cardname:'null',
+    backcolor:'#cef0ff',
+    fontcolor:'#434343',
+    image:require('./static/backsample_1.jpg'),
+    stampIndex:0,
+    stampcheck:Array().fill(false),
+    bgmode:true,
+    daymode:true,
+    mode:'first'
   }
 }
 // アクションクリエイター

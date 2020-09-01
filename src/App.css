@@ -56,6 +56,22 @@ button {
   box-shadow: 0 8px 6px rgba(0, 0, 0, 0.15);
 }
 
+.red_btn {
+  padding: 0.7em 2em;
+  border-radius: 5px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  background-color: #ff80c9;
+  color: white;
+}
+
+.blue_btn {
+  padding: 0.7em 2em;
+  border-radius: 5px;
+  background-color: #41c5ff;
+  color: white;
+}
+
 .modal_wrapper:not(:target) {
   opacity: 0;
   visibility: hidden;
@@ -308,6 +324,10 @@ button {
   display: none;
 }
 
+.set-wrapper .setdetail span {
+  color: #41c5ff;
+}
+
 #set-input:checked ~ .setting .gire {
   animation: r1 5s linear infinite;
   margin-bottom: 15px;
@@ -339,5 +359,18 @@ button {
   display: inline-block;
   margin-top: 20px;
   color: #434343;
+}
+
+.setreset {
+  font-size: 2em;
+  background-color: #ff80c9 !important;
+}
+
+.reset-alert {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 75px 130px 75px;
+  border-color: transparent transparent #fffb7c transparent;
 }
 /*# sourceMappingURL=App.css.map */

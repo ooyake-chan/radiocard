@@ -67,6 +67,8 @@ class Main extends Component{
       position:"static",
       transform:"translateX(0%)"
     }
+
+    // 画像アップロードのモーダル
     const img_modal_Style = {
       backgroundColor:"#41c5ff",
     }
@@ -81,6 +83,21 @@ class Main extends Component{
         </form>
       </div>
     )
+
+    // リセット画面のモーダル
+    const reset_modal_Style = {
+      backgroundColor:"#ff80c9",
+    }
+    const reset_modal_Body = (
+      <div>
+        <h2 className="reset-alert">注意</h2>
+        <p>カードをリセットしようとしています<br/>
+        リセットするとデータは元に戻せません</p>
+        <button className="red_btn">それでもリセットする！</button><br/>
+        <button className="blue_btn">リセットしないでもどる</button>
+      </div>
+    )
+
     let bgmode = this.props.bgmode
     let d = new Date()
     let date = d.getFullYear()+'ねん' + (1+ d.getMonth()) + 'がつ'
@@ -95,12 +112,11 @@ class Main extends Component{
           :
           <h1>{this.props.cardname}</h1>
           }
-
-
           {bgmode ? '' : <img src={this.state.image}/> }
           <h2>{date}</h2>
         </div>
         <Modal id="img_up_modal" name="画像のアップロード" style={img_modal_Style} body={img_modal_Body}/>
+        <Modal id="reset_modal" name="リセット" style={reset_modal_Style} body={reset_modal_Body}/>
         <Stamps />
       </div>
         <Setting colorChange={colorChange} stampChange={stampChange} fontChange={fontChange}/>

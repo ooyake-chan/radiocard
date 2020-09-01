@@ -130,12 +130,15 @@ export function SetName(props){
 
 export function SetDetail(props){
   return (
-    <div>
+    <div className="setdetail">
       <h2>詳しい設定</h2>
       <div className="flex">
-        <div onClick={()=> props.pageChange('NAME')}>
+        <div onClick={()=> props.daySwitch()}>
           <span className='block'>17</span>
-          <p>日付あり/なし</p>
+          {props.daymode ?
+          <p>日付あり/<span>なし</span></p>:
+          <p>日付<span>あり</span>/なし</p>
+          }
         </div>
         <div onClick={()=> props.pageChange('NAME')}>
           <span className='block'>How</span>
@@ -145,9 +148,9 @@ export function SetDetail(props){
           <span className='block'>En</span>
           <p>English</p>
         </div>
-        <div onClick={()=> props.pageChange('NAME')}>
-          <span className='block'>!</span>
-          <p>リセット</p>
+        <div>
+          <span className='block setreset'>!</span>
+          <a href="#reset_modal">リセット</a>
         </div>
       </div>
       <div>

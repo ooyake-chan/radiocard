@@ -23,6 +23,8 @@ class Setting extends Component{
     this.fontChange = this.fontChange.bind(this)
     this.nameChange = this.nameChange.bind(this)
     this.bgSwitch = this.bgSwitch.bind(this)
+    this.daySwitch = this.daySwitch.bind(this)
+    this.reset = this.reset.bind(this)
   }
 
   pageChange(page){
@@ -61,9 +63,17 @@ class Setting extends Component{
    bgSwitch(){
     this.props.dispatch({type:'BGSWITCH'})
   }
+   daySwitch(){
+    this.props.dispatch({type:'DAYSWITCH'})
+  }
+
+  reset(){
+    this.props.dispatch({type:'RESET'}) 
+  }
 
   render(){
     let bgmode = this.props.bgmode
+    let daymode = this.props.daymode
     let currentPage = ()=> {
       switch(this.state.page){
       case 'FIRST' :
@@ -85,7 +95,13 @@ class Setting extends Component{
         nameChange={()=>this.nameChange}
         />
       case 'DETAIL' :
-        return  <SetDetail pageChange={this.pageChange} />  
+        return  (
+        <SetDetail 
+        pageChange={this.pageChange}
+        daySwitch={this.daySwitch}
+        daymode={daymode}
+        reset={this.reset}
+        />)  
       default :
         return  <SetMain pageChange={this.pageChange} />
     }

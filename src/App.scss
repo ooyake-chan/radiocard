@@ -54,6 +54,20 @@ button {
     box-shadow: 0 8px 6px rgba(0, 0, 0, 0.15);
   }
 }
+.red_btn{
+  padding: 0.7em 2em;
+  border-radius: 5px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  background-color: $red;
+  color: white;
+}
+.blue_btn{
+  padding: 0.7em 2em;
+  border-radius: 5px;
+  background-color: $main-color;
+  color: white;
+}
   
 .modal_wrapper{
   &:not(:target){
@@ -270,6 +284,12 @@ button {
   #set-input{
     display: none;
   }
+  .setdetail {
+    & span {
+      color:$main-color;
+    }
+
+  }
 }
 #set-input:checked{
   ~.setting .gire{
@@ -301,4 +321,16 @@ button {
     color: $text-color;
   }
 
+}
+.setreset{
+  font-size: 2em;
+  background-color: $red !important;
+}
+
+.reset-alert{
+width: 0;
+height: 0;
+border-style: solid;
+border-width: 0 75px 130px 75px;
+border-color: transparent transparent #fffb7c transparent;
 }

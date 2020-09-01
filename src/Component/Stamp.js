@@ -15,7 +15,6 @@ class Stamp extends Component{
   constructor(props){
     super(props)
   }
-  
   render(){
   let img = (<img src={stamp[this.props.index]}/>)
   return( 
@@ -23,7 +22,7 @@ class Stamp extends Component{
       <button className="stamp" onClick={this.props.onClick}>
       {this.props.check ? img : ''}
       </button>
-  <p>{this.props.day}</p>
+  {this.props.daymode ? '' : <p>{this.props.day}</p>}
   </div>)
   }
 }
@@ -56,6 +55,7 @@ class Stamps extends Component{
   renderStamp(){
     let s = []
     let index = this.props.stampIndex
+    let daymode = this.props.daymode
     for(let i=0; i<=30; i++){
      s.push(
       <Stamp 
@@ -64,12 +64,14 @@ class Stamps extends Component{
           check={this.state.stampcheck[i]}
           index={index} 
           onClick={()=>this.doAction(i)}
+          daymode={daymode}
         />)
     }
     return (s)
   }
 
   render(){
+
     let stamps = this.renderStamp()
     return(
       <div className="stamps">
