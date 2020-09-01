@@ -9,16 +9,6 @@ class App extends Component {
   
   constructor(props){
     super(props)
-    if(this.props.backcolor === undefined){
-      this.state={
-        style:{backgroundColor:"#cef0ff",}
-      }
-    }else{
-      let backcolor = this.props.backcolor.slice()
-      this.state={
-        style:{backgroundColor:backcolor}
-      }
-    }
     this.colorChange = this.colorChange.bind(this)
     this.doChange = this.doChange.bind(this)
     this.check()
@@ -48,6 +38,14 @@ class App extends Component {
 
 
   render(){
+    let bgColor = {backgroundColor:this.props.backcolor}
+    let bgImg = {
+      backgroundImage:"url("+this.props.image+")",
+      backgroundSize:"cover",
+    }
+    let style
+    style = this.props.bgmode ? bgImg : bgColor
+
     let current_page
     switch(this.props.mode){
       case 'first' :
@@ -70,7 +68,7 @@ class App extends Component {
       </div>) 
       
     }
-    return <div style={this.state.style} >
+    return <div style={style} >
       <button onClick={this.doChange}>click</button>
       {current_page}
     </div>

@@ -8,6 +8,7 @@ const state_value = {
   image:require('./static/backsample_1.jpg'),
   stampIndex:0,
   stampcheck:Array().fill(false),
+  bgmode:true,
   mode:'main',
   blacklist:['mode'],
   whitelist:['cardname', 'stampcheck', 'backcolor', 'stamp', 'stampIndex', 'image']
@@ -24,6 +25,7 @@ export function cardReducer(state = state_value, action){
         image:state.image,
         stampIndex:state.stampIndex,
         stampcheck:state.stampcheck,
+        bgmode:state.bgmode,
         mode:'first'
       }
     case 'MAIN' : 
@@ -34,6 +36,7 @@ export function cardReducer(state = state_value, action){
         image:state.image,
         stampIndex:state.stampIndex,
         stampcheck:state.stampcheck,
+        bgmode:state.bgmode,
         mode:'main'
       }
     case 'HOW' : 
@@ -54,6 +57,8 @@ export function cardReducer(state = state_value, action){
       return fontReduce(state, action)
     case 'IMG':
       return imageReduce(state, action)
+    case 'BGSWITCH':
+      return bgSwitchReduce(state)
     default:
       return {
         cardname:state.cardname,
@@ -62,6 +67,7 @@ export function cardReducer(state = state_value, action){
         stampIndex:state.stampIndex,
         backcolor:state.backcolor,
         stampcheck:state.stampcheck,
+        bgmode:state.bgmode,
         mode:'main',
       }
   }
@@ -77,6 +83,7 @@ function nameReduce(state, action){
     stampIndex:state.stampIndex,
     backcolor:state.backcolor,
     stampcheck:state.stampcheck,
+    bgmode:state.bgmode,
     mode:'main',
   }
 }
@@ -89,6 +96,7 @@ function stampReduce(state, action){
     stampIndex:state.stampIndex,
     backcolor:state.backcolor,
     stampcheck:newstamp,
+    bgmode:state.bgmode,
     mode:'main'
   }
 }
@@ -101,6 +109,7 @@ function backReduce(state, action){
     stampIndex:state.stampIndex,
     stampcheck:state.stampcheck,
     backcolor:backcolor,
+    bgmode:state.bgmode,
     mode:'main'
   }
 }
@@ -114,6 +123,7 @@ function currentStampReduce(state, action){
     stampIndex:stamp,
     stampcheck:state.stampcheck,
     backcolor:state.backcolor,
+    bgmode:state.bgmode,
     mode:'main'
   }
 }
@@ -127,6 +137,7 @@ function fontReduce(state, action){
     stampIndex:state.stampIndex,
     stampcheck:state.stampcheck,
     backcolor:state.backcolor,
+    bgmode:state.bgmode,
     mode:'main'
   }
 }
@@ -140,6 +151,20 @@ function imageReduce(state, action){
     stampIndex:state.stampIndex,
     stampcheck:state.stampcheck,
     backcolor:state.backcolor,
+    bgmode:state.bgmode,
+    mode:'main'
+  }
+}
+
+function bgSwitchReduce(state){
+  return{
+    cardname:state.cardname,
+    fontcolor:state.fontcolor,
+    image:state.image,
+    stampIndex:state.stampIndex,
+    stampcheck:state.stampcheck,
+    backcolor:state.backcolor,
+    bgmode:!state.bgmode,
     mode:'main'
   }
 }

@@ -14,6 +14,9 @@ export const stamp = [
 const img ={
   gire:require('../static/gire_icon.svg'),
   good:require('../static/stamp_good.svg'),
+  download:require('../static/download_icon.png'),
+  part:require('../static/switch_part.svg'),
+  cover:require('../static/switch_cover.svg'),
 }
 
 export function SetMain(props){
@@ -50,11 +53,14 @@ export function SetBack(props){
           <p>色を選択</p>
         </div>
         <div>
-          <img src={gire_icon}/><br/>
+          <img src={img.download} className="notCircle"/><br/>
           <a href="#img_up_modal">画像を変える</a>
         </div>
-        <div onClick={()=>props.pageChange('NAME')}>
-          <span className='block'>Name</span>
+        <div onClick={()=>props.bgSwitch()}>
+          {props.bgmode ?
+          <img src={img.cover} className="notCircle switch"/> :
+          <img src={img.part} className="notCircle switch"/>
+          }<br/>
           <p>全体/一部の切り替え</p> 
         </div>
       </div>

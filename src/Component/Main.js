@@ -4,6 +4,7 @@ import { currentStampAction, imageAction } from '../Store'
 import Stamps from './Stamp'
 import Setting from './Setting'
 import Modal from './Modal'
+import autoMergeLevel1 from 'redux-persist/es/stateReconciler/autoMergeLevel1';
 
 class Main extends Component{
   constructor(props){
@@ -62,6 +63,10 @@ class Main extends Component{
   }
   
   render (){
+    const bgimg = {
+      position:"static",
+      transform:"translateX(0%)"
+    }
     const img_modal_Style = {
       backgroundColor:"#41c5ff",
     }
@@ -76,6 +81,7 @@ class Main extends Component{
         </form>
       </div>
     )
+    let bgmode = this.props.bgmode
     let d = new Date()
     let date = d.getFullYear()+'ねん' + (1+ d.getMonth()) + 'がつ'
     let colorChange = this.props.colorChange
@@ -84,8 +90,14 @@ class Main extends Component{
     return <main style={this.state.style}>
       <div className="main">
         <div className="img_wrapper">
+          {bgmode ? 
+          <h1 style={bgimg}>{this.props.cardname}</h1>
+          :
           <h1>{this.props.cardname}</h1>
-          <img src={this.state.image}/>
+          }
+
+
+          {bgmode ? '' : <img src={this.state.image}/> }
           <h2>{date}</h2>
         </div>
         <Modal id="img_up_modal" name="画像のアップロード" style={img_modal_Style} body={img_modal_Body}/>

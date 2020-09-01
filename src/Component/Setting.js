@@ -22,6 +22,7 @@ class Setting extends Component{
     this.getStamp = this.getStamp.bind(this)
     this.fontChange = this.fontChange.bind(this)
     this.nameChange = this.nameChange.bind(this)
+    this.bgSwitch = this.bgSwitch.bind(this)
   }
 
   pageChange(page){
@@ -57,13 +58,24 @@ class Setting extends Component{
      this.props.dispatch(action)
    }
 
+   bgSwitch(){
+    this.props.dispatch({type:'BGSWITCH'})
+  }
+
   render(){
+    let bgmode = this.props.bgmode
     let currentPage = ()=> {
       switch(this.state.page){
       case 'FIRST' :
       return  <SetMain pageChange={this.pageChange} />
       case 'BACK' :
-        return  <SetBack pageChange={this.pageChange} colorChange={()=>this.colorChange} />
+        return  (
+        <SetBack 
+        pageChange={this.pageChange} 
+        colorChange={()=>this.colorChange} 
+        bgSwitch={this.bgSwitch}
+        bgmode={bgmode}
+        />)
       case 'STAMP' :
         return  <SetStamp pageChange={this.pageChange} getStamp={this.getStamp}/>
       case 'NAME' :
