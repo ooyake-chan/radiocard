@@ -366,11 +366,14 @@ button {
   background-color: #ff80c9 !important;
 }
 
-.reset-alert {
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 0 75px 130px 75px;
-  border-color: transparent transparent #fffb7c transparent;
+.coution_icon {
+  position: relative;
+}
+
+.reset_modal h2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 /*# sourceMappingURL=App.css.map */

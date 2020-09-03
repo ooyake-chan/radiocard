@@ -6,6 +6,10 @@ import Setting from './Setting'
 import Modal from './Modal'
 import autoMergeLevel1 from 'redux-persist/es/stateReconciler/autoMergeLevel1';
 
+const img ={
+  coution:require('../static/coution.svg'),
+
+}
 class Main extends Component{
   constructor(props){
     super(props)
@@ -16,6 +20,7 @@ class Main extends Component{
     this.stampChange = this.stampChange.bind(this)
     this.fontChange = this.fontChange.bind(this)
     this.fileInput = this.fileInput.bind(this)
+    this.reset = this.reset.bind(this)
   }
 
   stampChange(stampIndex){
@@ -61,6 +66,10 @@ class Main extends Component{
     })
     preview.src = ""
   }
+
+  reset(){
+    this.props.dispatch({type:'RESET'}) 
+  }
   
   render (){
     const bgimg = {
@@ -89,12 +98,15 @@ class Main extends Component{
       backgroundColor:"#ff80c9",
     }
     const reset_modal_Body = (
-      <div>
-        <h2 className="reset-alert">注意</h2>
+      <div className="reset_modal">
+        <div className="coution_icon">
+          <h2>注意!</h2>
+          <img src={img.coution} />
+        </div>
         <p>カードをリセットしようとしています<br/>
         リセットするとデータは元に戻せません</p>
-        <button className="red_btn">それでもリセットする！</button><br/>
-        <button className="blue_btn">リセットしないでもどる</button>
+        <button className="red_btn" onClick={()=>this.reset()}>それでもリセットする！</button><br/>
+        <a className="blue_btn" href="#!">リセットしないでもどる</a>
       </div>
     )
 

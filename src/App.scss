@@ -4,6 +4,13 @@ $text-color:#434343;
 $yellow:#fffa7c;
 $red:#ff80c9;
 
+@mixin center-psition{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 @font-face{
   font-family: 'tsukushi';
   src: url('./webtsukushi.woff')format('woff');
@@ -327,10 +334,11 @@ button {
   background-color: $red !important;
 }
 
-.reset-alert{
-width: 0;
-height: 0;
-border-style: solid;
-border-width: 0 75px 130px 75px;
-border-color: transparent transparent #fffb7c transparent;
+.coution_icon{
+  position: relative;
+}
+.reset_modal{
+  & h2{
+  @include center-psition();
+  }
 }

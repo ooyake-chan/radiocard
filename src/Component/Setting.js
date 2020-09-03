@@ -24,7 +24,6 @@ class Setting extends Component{
     this.nameChange = this.nameChange.bind(this)
     this.bgSwitch = this.bgSwitch.bind(this)
     this.daySwitch = this.daySwitch.bind(this)
-    this.reset = this.reset.bind(this)
   }
 
   pageChange(page){
@@ -65,10 +64,6 @@ class Setting extends Component{
   }
    daySwitch(){
     this.props.dispatch({type:'DAYSWITCH'})
-  }
-
-  reset(){
-    this.props.dispatch({type:'RESET'}) 
   }
 
   render(){

@@ -2,7 +2,7 @@ import { createStore } from 'redux'
 
 //ステートの値
 const state_value = {
-  cardname:'null',
+  cardname:'',
   backcolor:'#cef0ff',
   fontcolor:'#434343',
   image:require('./static/backsample_1.jpg'),
@@ -200,13 +200,13 @@ function daySwitchReduce(state){
 
 function resetReduce(){
   return{
-    cardname:'null',
+    cardname:'',
     backcolor:'#cef0ff',
     fontcolor:'#434343',
     image:require('./static/backsample_1.jpg'),
     stampIndex:0,
     stampcheck:Array().fill(false),
-    bgmode:true,
+    bgmode:false,
     daymode:true,
     mode:'first'
   }
