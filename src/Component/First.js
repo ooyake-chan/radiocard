@@ -14,6 +14,7 @@ class First extends Component{
     }
     this.doChange = this.doChange.bind(this)
     this.doAction = this.doAction.bind(this)
+    this.modeAction = this.modeAction.bind(this)
   }
   doChange(e){
     this.setState({
@@ -25,7 +26,25 @@ class First extends Component{
     let action = nameAction(this.state.name)
     this.props.dispatch(action)
   }
+
+  mode(){
+    if(this.props.mode === 'first'){
+      return true
+    }else{
+      return false
+    }
+  }
+
+  modeAction(mode){
+    if(mode === 'main'){
+      this.props.dispatch({type:'MAIN'})
+    }else if(mode === 'about'){
+      this.props.dispatch({type:'ABOUT'})
+    }
+  }
+
   render(){
+    // 名前入力モーダル
     const modalStyle = {
       backgroundColor:"#41c5ff",
     }
@@ -57,7 +76,13 @@ class First extends Component{
           <p>設定マークをタッチすると様々な設定がおこなえます</p>
           </div>
         </div>
-        <a className="yel_btn" href="#modal">カードを作る</a>
+        {this.mode() ? 
+        <a className="yel_btn" href="#modal">カードを作る</a>:
+        <div>
+          <a className="blue_btn" onClick={()=>this.modeAction('main')}>前の画面にもどる</a><br/>
+          <a className="text_btn" onClick={()=>this.modeAction('about')}>アプリの詳細</a>
+        </div>
+        }
       </div>
         <Modal id="modal" name="カードをつくる" style={modalStyle} body={modalBody}/>
     </div>

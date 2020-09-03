@@ -140,7 +140,7 @@ export function SetDetail(props){
           <p>日付<span>あり</span>/なし</p>
           }
         </div>
-        <div onClick={()=> props.pageChange('NAME')}>
+        <div onClick={()=> props.howtoPage()}>
           <span className='block'>How</span>
           <p>使い方</p>
         </div>

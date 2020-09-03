@@ -4,6 +4,7 @@ import './App.css';
 import { backAction } from './Store'
 import First from './Component/First'
 import Main from './Component/Main'
+import { About } from './Component/About'
 
 class App extends Component {
   
@@ -57,6 +58,18 @@ class App extends Component {
       case 'main' :
         current_page = (
           <Main colorChange={this.colorChange}/>
+        ) 
+      break
+
+      case 'how' :
+        current_page = (
+          <First />
+        ) 
+      break
+
+      case 'about' :
+        current_page = (
+          <About />
         ) 
       break
       

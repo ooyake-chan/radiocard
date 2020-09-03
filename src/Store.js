@@ -45,8 +45,26 @@ export function cardReducer(state = state_value, action){
     case 'HOW' : 
       return { 
         cardname:state.cardname,
+        backcolor:state.backcolor,
+        fontcolor:state.fontcolor,
+        image:state.image,
+        stampIndex:state.stampIndex,
         stampcheck:state.stampcheck,
-        mode:'main'
+        bgmode:state.bgmode,
+        daymode:state.daymode,
+        mode:'how'
+      }
+    case 'ABOUT' : 
+      return { 
+        cardname:state.cardname,
+        backcolor:state.backcolor,
+        fontcolor:state.fontcolor,
+        image:state.image,
+        stampIndex:state.stampIndex,
+        stampcheck:state.stampcheck,
+        bgmode:state.bgmode,
+        daymode:state.daymode,
+        mode:'about'
       }
     case 'NAME':
       return nameReduce(state, action) 

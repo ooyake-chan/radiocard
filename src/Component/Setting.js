@@ -24,6 +24,7 @@ class Setting extends Component{
     this.nameChange = this.nameChange.bind(this)
     this.bgSwitch = this.bgSwitch.bind(this)
     this.daySwitch = this.daySwitch.bind(this)
+    this.howtoPage = this.howtoPage.bind(this)
   }
 
   pageChange(page){
@@ -66,6 +67,14 @@ class Setting extends Component{
     this.props.dispatch({type:'DAYSWITCH'})
   }
 
+   howtoPage(){
+     if(this.props.mode === 'main'){
+     this.props.dispatch({type:'HOW'})
+    }else{
+      this.props.dispatch({type:'MAIN'})
+    }
+   }
+
   render(){
     let bgmode = this.props.bgmode
     let daymode = this.props.daymode
@@ -95,7 +104,7 @@ class Setting extends Component{
         pageChange={this.pageChange}
         daySwitch={this.daySwitch}
         daymode={daymode}
-        reset={this.reset}
+        howtoPage={this.howtoPage}
         />)  
       default :
         return  <SetMain pageChange={this.pageChange} />

@@ -8,8 +8,8 @@ import autoMergeLevel1 from 'redux-persist/es/stateReconciler/autoMergeLevel1';
 
 const img ={
   coution:require('../static/coution.svg'),
-
 }
+
 class Main extends Component{
   constructor(props){
     super(props)
