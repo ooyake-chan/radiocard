@@ -12,6 +12,7 @@ class App extends Component {
     super(props)
     this.colorChange = this.colorChange.bind(this)
     this.doChange = this.doChange.bind(this)
+    this.modeAction = this.modeAction.bind(this)
     this.check()
   }
 
@@ -29,6 +30,10 @@ class App extends Component {
     }else{
       this.props.dispatch({type:'FIRST'})
     }
+  }
+
+  modeAction(mode){
+    this.props.dispatch({type:mode})
   }
 
   colorChange(color){
@@ -69,7 +74,7 @@ class App extends Component {
 
       case 'about' :
         current_page = (
-          <About />
+          <About modeAction={this.modeAction}/>
         ) 
       break
       

@@ -10,6 +10,7 @@
 
 a {
   text-decoration: none;
+  color: #41c5ff;
 }
 
 body {
@@ -129,6 +130,13 @@ button {
   padding: 10px 13px;
   margin-top: 20px;
   font-size: 0.9em;
+}
+
+.first_conteiner {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background-color: #cef0ff;
 }
 
 .first {
@@ -391,6 +399,14 @@ button {
   transform: translate(-50%, -50%);
 }
 
+.about {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 50px 0;
+  background-color: #cef0ff;
+}
+
 .about_table {
   width: 80%;
   background-color: white;
@@ -403,20 +419,45 @@ button {
   text-align: center;
 }
 
+.about_table h2 {
+  margin-bottom: 10px;
+  font-size: 1.25em;
+}
+
 .about_table hr {
   border: 2px dashed #41c5ff;
+  margin: 1.25em 0;
 }
 
 .about_table a {
   color: #41c5ff;
 }
 
-.about_table img {
-  width: 2em;
+.about_table p {
+  margin: 0;
 }
 
 .about_table .blue_btn {
   display: inline-block;
   color: white;
+  margin-top: 20px;
+}
+
+.about_table .flex {
+  justify-content: space-between;
+}
+
+.about_table .git {
+  width: 70%;
+}
+
+.about_table .fa-twitter {
+  width: 2em;
+  color: #1da1f2;
+}
+
+.about_table .fa-github {
+  width: 2em;
+  color: #24292e;
 }
 /*# sourceMappingURL=App.css.map */

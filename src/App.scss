@@ -20,7 +20,7 @@ $red:#ff80c9;
 }
 a{
   text-decoration: none;
-  
+  color: $main-color;
 }
 body{
   font-family: 'tsukushi', '游ゴシック', 'Arial', 'メイリオ', 'ヒラギノ角ゴ ProN', sans-serif;
@@ -130,7 +130,12 @@ button {
       font-size: 0.9em;
     }
 
-
+.first_conteiner{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background-color: $back-color;
+}
 .first{
   width: 90%;
   margin: 0 auto;
@@ -355,6 +360,13 @@ button {
   }
 }
 
+.about{
+  position:absolute;
+  top: 0;
+  width: 100%;
+  padding: 50px 0;
+  background-color: $back-color;
+}
 .about_table{
   width: 80%;
   background-color: white;
@@ -364,17 +376,37 @@ button {
   & h1{
     text-align: center;
   }
+  & h2{
+    margin-bottom:10px;
+    font-size: 1.25em;
+  }
   & hr{
     border: 2px dashed $main-color;
+    margin: 1.25em 0;
   }
   & a{
     color: $main-color;
   }
-  & img{
-    width: 2em;
+  & p{
+    margin: 0;
   }
   .blue_btn{
     display: inline-block;
     color: white;
+    margin-top: 20px;
+  }
+  .flex{
+    justify-content: space-between;
+  }
+  .git{
+    width: 70%;
+  }
+  .fa-twitter{
+    width: 2em;
+    color: #1da1f2;
+  }
+  .fa-github{
+    width: 2em;
+    color:#24292e;
   }
 }

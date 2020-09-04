@@ -4,9 +4,6 @@ import Modal from '../Component/Modal'
 import{ nameAction } from '../Store'
 
 class First extends Component{
-  style={
-    backgroundColor:'#cef0ff',
-  }
   constructor(props){
     super(props)
     this.state = {
@@ -56,7 +53,7 @@ class First extends Component{
         </form>
       </div>
     )
-    return <div>
+    return <div className="first_conteiner">
       <div className="first">
         <h1>カードの使い方</h1>
         <p>カードの名前を入力します<br/>
