@@ -1,6 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+  <head prefix="og: http://ogp.me/ns#">
+
+    <!-- 共通設定 -->
+<meta property="og:title" content="スタンプカード">
+<meta property="og:type" content="website">
+<meta property="og:url" content="表示したいページのURL（絶対パス）">
+<meta property="og:image" content="表示したい画像のURL（絶対パス）">
+<!-- 以下省略可能ですが、site_name, description, localeは載せたほうがいいです。 -->
+<meta property="og:site_name" content="スタンプカード">
+<meta property="og:description" content="背景やスタンプ画像をカスタマイズできるオンラインスタンプカード（？）です。ラジオ体操カードに、毎日の目標達成の記録にお使いください。※めちゃくちゃベータ版です。">
+<meta property="og:locale" content="ja">
+<!-- /共通設定 -->
+
+<!-- Facebookの設定 -->
+<!-- 記載しなくても動作しますが極力設定しましょう。記載する場合はどちらか一つ。個人的にapp_id推奨です。 -->
+<meta property="fb:app_id" content="App-IDがここに入ります。">
+<!-- /Facebookの設定 -->
+
+<!-- Twitterの設定 -->
+<meta name="twitter:card" content="summary">
+<!-- 以下省略可能です。 -->
+<meta name="twitter:site" content="@OOyake_">
+<meta name="twitter:creator" content="公/@OOyake_">
+<!-- /Twitterの設定 -->
+</head>
+
     <meta charset="utf-8" />
     <link href="../src/doctor.css">
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
