@@ -37,6 +37,10 @@ button {
 	-moz-appearance: none;
 	appearance: none;
 }
+html,body,#root{
+  height: 100%;
+  // overflow: hidden;
+}
 
 // 共通UI
 .table{
@@ -147,6 +151,7 @@ button {
     top: 0;
     width: 100%;
     height: 100%;
+    margin: 0;
     background-color: rgba(67, 67, 67, 0.7);
     cursor: pointer;
   }
@@ -180,6 +185,7 @@ button {
   position: absolute;
   top: 0;
   width: 100%;
+  height: 100%;
   background-color: $back-color;
 }
 .first{
@@ -219,6 +225,8 @@ button {
   text-align: center;
   .img_wrapper{
     position: relative;
+    max-width: 800px;
+    margin: 0 auto;
     & img{
       width: 100%;
     }
@@ -398,6 +406,7 @@ button {
   }
   #preview_img{
     width: 90%;
+    max-height: 200px;
   }
   & a{
     display: inline-block;
@@ -433,6 +442,7 @@ button {
   position:absolute;
   top: 0;
   width: 100%;
+  height: 100%;
   padding: 50px 0;
   background-color: $back-color;
 }
@@ -477,5 +487,22 @@ button {
   .fa-github{
     width: 2em;
     color:#24292e;
+  }
+}
+
+@media(max-width:450px){
+  .main{
+    padding: 10px 0 ;
+  }
+  body{
+    font-size:12px;
+  }
+  h1{
+    font-size:1.5em;
+    margin: 0.5em 0 ;
+  }
+  h2{
+    font-size:1.3em;
+    margin: 0.5em 0 ;
   }
 }

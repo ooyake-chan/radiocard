@@ -28,6 +28,10 @@ button {
   appearance: none;
 }
 
+html, body, #root {
+  height: 100%;
+}
+
 .table {
   background-color: white;
   border-radius: 5px;
@@ -151,6 +155,7 @@ button {
   top: 0;
   width: 100%;
   height: 100%;
+  margin: 0;
   background-color: rgba(67, 67, 67, 0.7);
   cursor: pointer;
 }
@@ -187,6 +192,7 @@ button {
   position: absolute;
   top: 0;
   width: 100%;
+  height: 100%;
   background-color: #cef0ff;
 }
 
@@ -234,6 +240,8 @@ button {
 
 .main .img_wrapper {
   position: relative;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .main .img_wrapper img {
@@ -437,6 +445,7 @@ button {
 
 #img_up_modal #preview_img {
   width: 90%;
+  max-height: 200px;
 }
 
 #img_up_modal a {
@@ -473,6 +482,7 @@ button {
   position: absolute;
   top: 0;
   width: 100%;
+  height: 100%;
   padding: 50px 0;
   background-color: #cef0ff;
 }
@@ -529,5 +539,22 @@ button {
 .about_table .fa-github {
   width: 2em;
   color: #24292e;
+}
+
+@media (max-width: 450px) {
+  .main {
+    padding: 10px 0;
+  }
+  body {
+    font-size: 12px;
+  }
+  h1 {
+    font-size: 1.5em;
+    margin: 0.5em 0;
+  }
+  h2 {
+    font-size: 1.3em;
+    margin: 0.5em 0;
+  }
 }
 /*# sourceMappingURL=App.css.map */

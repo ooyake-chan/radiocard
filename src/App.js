@@ -44,10 +44,13 @@ class App extends Component {
 
 
   render(){
-    let bgColor = {backgroundColor:this.props.backcolor}
+    let bgColor = {
+      backgroundColor:this.props.backcolor
+    }
     let bgImg = {
       backgroundImage:"url("+this.props.image+")",
       backgroundSize:"cover",
+      // height:"100%",
     }
     let style
     style = this.props.bgmode ? bgImg : bgColor
@@ -86,8 +89,8 @@ class App extends Component {
       </div>) 
       
     }
-    return <div style={style} >
-      <button onClick={this.doChange}>click</button>
+    return <div style={style} className="appComp" >
+      {/* <button onClick={this.doChange}>click</button> */}
       {current_page}
     </div>
   }

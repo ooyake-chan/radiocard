@@ -161,7 +161,7 @@ export function SetDetail(props){
           <p>English</p>
         </div>
         <div className="cursor">
-          <span className='block setreset'>!</span>
+          <span className='block setreset'>!</span><br/>
           <a href="#reset_modal">リセット</a>
         </div>
       </div>
