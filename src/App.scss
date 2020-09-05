@@ -38,6 +38,7 @@ button {
 	appearance: none;
 }
 
+// 共通UI
 .table{
   background-color: white;
   border-radius: 5px;
@@ -48,6 +49,23 @@ button {
 }
 .center{
   text-align: center;
+}
+.cursor{
+  cursor: pointer;
+  & a{
+    color: $text-color;
+  }
+  & label{
+    display: inline-block;
+    margin: 1.25em 0;
+    cursor: pointer;
+  }
+}
+.cursor:hover{
+  transform: translateY(-3px);
+  & p,a,label{
+    color: $main-color;
+  }
 }
 .yel_btn{
   padding:15px 30px;
@@ -78,7 +96,33 @@ button {
   color: white;
   cursor: pointer;
 }
+.simple_btn{
+  display: inline-block;
+  border: 2px solid $text-color;
+  margin-top: 40px;
+  color: $text-color;
+  font-size: 0.8em;
+  padding: 1px 6px;
+  cursor: pointer;
+}
+.input_conteiner{
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+  border: 1px solid;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.input_color{
+  background: none;
+  border: none;
+  width: 100px;
+  height: 100px;
+  padding: 0;
+  transform: translate(-30px,-30px);
+}
   
+// モーダル
 .modal_wrapper{
   &:not(:target){
     opacity: 0;
@@ -104,6 +148,7 @@ button {
     width: 100%;
     height: 100%;
     background-color: rgba(67, 67, 67, 0.7);
+    cursor: pointer;
   }
   .modal{
     position: absolute;
@@ -130,6 +175,7 @@ button {
       font-size: 0.9em;
     }
 
+// Firstコンポーネント
 .first_conteiner{
   position: absolute;
   top: 0;
@@ -165,6 +211,7 @@ button {
   }
 }
 
+// Mainコンポーネント
 .main{
   width: 85%;
   padding: 20px 0 15px 0;
@@ -197,6 +244,8 @@ button {
     }
   }
 }
+
+// Stampコンポーネント
 .stamps{
   width: 100%;
   max-width: 800px;
@@ -228,6 +277,7 @@ button {
   }
 }
 
+// SettingとsetPartsコンポーネント
 @keyframes r1{
   0%{transform: rotate(0deg);}
   100%{transform: rotate(360deg);}
@@ -256,6 +306,10 @@ button {
         border-radius: 50%;
         border: 1px solid #ebebeb;
       }
+      & a{
+        display: inline-block;
+        margin: 1.25em 0 ;
+      }
       .notCircle{
         border-radius: 0;
         border: none;
@@ -283,9 +337,13 @@ button {
       }
     }
     button{
-      border: 2px solid $main-color;
+      border: 2px solid $text-color;
       margin-top: 40px;
-      color: $main-color;
+      color: $text-color;
+      cursor: pointer;
+    }
+    label{
+      cursor: pointer;
     }
     .yel_btn{
       margin-top: 20px;
@@ -304,6 +362,7 @@ button {
     height: 300%;
     background-color: rgba(67, 67, 67, 0.7);
     display: none;
+    cursor: pointer;
   }
   #set-input{
     display: none;
@@ -331,6 +390,7 @@ button {
     display: block;
   }
 }
+
 #img_up_modal{
   & span{
     display: inline-block;
@@ -344,13 +404,21 @@ button {
     margin-top: 20px;
     color: $text-color;
   }
-
 }
+
+.set_name{
+  #nameform{
+    width: 100%;
+  }
+  .center{
+    min-width:8.75em;
+  }
+}
+
 .setreset{
   font-size: 2em;
   background-color: $red !important;
 }
-
 .coution_icon{
   position: relative;
 }
@@ -360,6 +428,7 @@ button {
   }
 }
 
+// Aboutコンポーネント
 .about{
   position:absolute;
   top: 0;

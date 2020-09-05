@@ -42,6 +42,28 @@ button {
   text-align: center;
 }
 
+.cursor {
+  cursor: pointer;
+}
+
+.cursor a {
+  color: #434343;
+}
+
+.cursor label {
+  display: inline-block;
+  margin: 1.25em 0;
+  cursor: pointer;
+}
+
+.cursor:hover {
+  transform: translateY(-3px);
+}
+
+.cursor:hover p, .cursor:hover a, .cursor:hover label {
+  color: #41c5ff;
+}
+
 .yel_btn {
   padding: 15px 30px;
   border-radius: 10px;
@@ -76,6 +98,34 @@ button {
   cursor: pointer;
 }
 
+.simple_btn {
+  display: inline-block;
+  border: 2px solid #434343;
+  margin-top: 40px;
+  color: #434343;
+  font-size: 0.8em;
+  padding: 1px 6px;
+  cursor: pointer;
+}
+
+.input_conteiner {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+  border: 1px solid;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.input_color {
+  background: none;
+  border: none;
+  width: 100px;
+  height: 100px;
+  padding: 0;
+  transform: translate(-30px, -30px);
+}
+
 .modal_wrapper:not(:target) {
   opacity: 0;
   visibility: hidden;
@@ -102,6 +152,7 @@ button {
   width: 100%;
   height: 100%;
   background-color: rgba(67, 67, 67, 0.7);
+  cursor: pointer;
 }
 
 .modal {
@@ -287,6 +338,11 @@ button {
   border: 1px solid #ebebeb;
 }
 
+.set-wrapper .setting .setConteiner a {
+  display: inline-block;
+  margin: 1.25em 0;
+}
+
 .set-wrapper .setting .setConteiner .notCircle {
   border-radius: 0;
   border: none;
@@ -318,9 +374,14 @@ button {
 }
 
 .set-wrapper .setting button {
-  border: 2px solid #41c5ff;
+  border: 2px solid #434343;
   margin-top: 40px;
-  color: #41c5ff;
+  color: #434343;
+  cursor: pointer;
+}
+
+.set-wrapper .setting label {
+  cursor: pointer;
 }
 
 .set-wrapper .setting .yel_btn {
@@ -340,6 +401,7 @@ button {
   height: 300%;
   background-color: rgba(67, 67, 67, 0.7);
   display: none;
+  cursor: pointer;
 }
 
 .set-wrapper #set-input {
@@ -381,6 +443,14 @@ button {
   display: inline-block;
   margin-top: 20px;
   color: #434343;
+}
+
+.set_name #nameform {
+  width: 100%;
+}
+
+.set_name .center {
+  min-width: 8.75em;
 }
 
 .setreset {

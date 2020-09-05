@@ -15,7 +15,6 @@ class Setting extends Component{
     super(props)
     this.state={
       page:'FIRST',
-      backcolor:'',
     }
     this.pageChange = this.pageChange.bind(this)
     this.colorChange = this.colorChange.bind(this)
@@ -76,12 +75,24 @@ class Setting extends Component{
    }
 
   render(){
+    let close_btn = (
+      <label for="set-input" className="simple_btn">とじる</label>
+    )
+    let stampIndex = this.props.stampIndex
+    let backimage = this.props.image
+    let backcolor = this.props.backcolor
+    let fontcolor = this.props.fontcolor
     let bgmode = this.props.bgmode
     let daymode = this.props.daymode
     let currentPage = ()=> {
       switch(this.state.page){
       case 'FIRST' :
-      return  <SetMain pageChange={this.pageChange} />
+      return  <SetMain 
+      pageChange={this.pageChange}
+      close_btn={close_btn} 
+      backimage={backimage}
+      stampIndex={stampIndex}
+      />
       case 'BACK' :
         return  (
         <SetBack 
@@ -89,14 +100,19 @@ class Setting extends Component{
         colorChange={()=>this.colorChange} 
         bgSwitch={this.bgSwitch}
         bgmode={bgmode}
+        backcolor={backcolor}
+        backimage={backimage}
         />)
       case 'STAMP' :
-        return  <SetStamp pageChange={this.pageChange} getStamp={this.getStamp}/>
+        return  <SetStamp 
+        pageChange={this.pageChange} 
+        getStamp={this.getStamp}/>
       case 'NAME' :
         return  <SetName 
         pageChange={this.pageChange} 
         fontChange={()=>this.fontChange}
         nameChange={()=>this.nameChange}
+        fontcolor={fontcolor}
         />
       case 'DETAIL' :
         return  (

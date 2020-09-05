@@ -3,12 +3,12 @@ import {connect} from 'react-redux'
 import { stampAction } from '../Store'
 
 const stamp = [
-  require('../static/stamp_cake.svg'),
+  require('../static/stamp_good.svg'),
   require('../static/stamp_che.svg'),
   require('../static/stamp_chekin.svg'),
   require('../static/stamp_rose.svg'),
   require('../static/stamp_sun.svg'),
-  require('../static/stamp_good.svg'),
+  require('../static/stamp_cake.svg'),
 ]
 
 class Stamp extends Component{
