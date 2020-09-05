@@ -39,7 +39,6 @@ button {
 }
 html,body,#root{
   height: 100%;
-  // overflow: hidden;
 }
 
 // 共通UI
@@ -53,6 +52,9 @@ html,body,#root{
 }
 .center{
   text-align: center;
+}
+.overflow{
+  overflow: hidden;
 }
 .cursor{
   cursor: pointer;
@@ -77,11 +79,9 @@ html,body,#root{
   background: $yellow;
   font-size: 1.8em;
   cursor: pointer;
+  overflow: hidden;
     &:hover{
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
-  }
-    &:active{
-    box-shadow: 0 8px 6px rgba(0, 0, 0, 0.15);
+      transform: translateY(-3px);
   }
 }
 .red_btn{
@@ -91,7 +91,11 @@ html,body,#root{
   margin-bottom: 30px;
   background-color: $red;
   color: white;
+  overflow: hidden;
   cursor: pointer;
+  &:hover{
+    transform: translateY(-3px);
+  }
 }
 .blue_btn{
   padding: 0.7em 2em;
@@ -99,6 +103,10 @@ html,body,#root{
   background-color: $main-color;
   color: white;
   cursor: pointer;
+  overflow: hidden;
+  &:hover{
+    transform: translateY(-3px);
+  }
 }
 .simple_btn{
   display: inline-block;
@@ -108,7 +116,44 @@ html,body,#root{
   font-size: 0.8em;
   padding: 1px 6px;
   cursor: pointer;
+  overflow: hidden;
+  &:hover{
+    transform: translateY(-3px);
+  }
 }
+.ripple{
+  background-color: $main-color;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 5;
+  transform: translateX(-50%) translateY(-50%);
+  outline: none;
+  pointer-events: none;
+  
+  animation-name: rippleEffect;
+  animation-duration: .5s;
+  animation-fill-mode:none;
+
+  width: 0px;
+  height: 0px;
+}
+@keyframes rippleEffect {
+  0% {
+      opacity: 1;
+      width: 0px;
+      height: 0px;
+  }
+  40% {
+       opacity: .3;
+  }
+  100% {
+      opacity: 0;
+      width: 100px;
+      height: 100px;
+  }
+}
+
+
 .input_conteiner{
   width: 50px;
   height: 50px;
@@ -351,6 +396,9 @@ html,body,#root{
       margin-top: 40px;
       color: $text-color;
       cursor: pointer;
+      &:hover{
+        transform: translateY(-3px);
+      }
     }
     label{
       cursor: pointer;
@@ -437,6 +485,11 @@ html,body,#root{
   & h2{
   @include center-psition();
   }
+  .blue_btn{
+    &:hover{
+      transform: translateY(-3px);
+    }
+  }
 }
 
 // Aboutコンポーネント
@@ -475,6 +528,9 @@ html,body,#root{
     display: inline-block;
     color: white;
     margin-top: 20px;
+    &:hover{
+      transform: translateY(-3px);
+    }
   }
   .flex{
     justify-content: space-between;
@@ -506,5 +562,13 @@ html,body,#root{
   h2{
     font-size:1.3em;
     margin: 0.5em 0 ;
+  }
+  .stampwrap{
+    margin-bottom:0.5em;
+  }
+}
+@media(min-height:732px){
+  .appComp{
+    height: 100%;
   }
 }

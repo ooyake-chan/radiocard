@@ -46,6 +46,10 @@ html, body, #root {
   text-align: center;
 }
 
+.overflow {
+  overflow: hidden;
+}
+
 .cursor {
   cursor: pointer;
 }
@@ -74,14 +78,11 @@ html, body, #root {
   background: #fffa7c;
   font-size: 1.8em;
   cursor: pointer;
+  overflow: hidden;
 }
 
 .yel_btn:hover {
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
-}
-
-.yel_btn:active {
-  box-shadow: 0 8px 6px rgba(0, 0, 0, 0.15);
+  transform: translateY(-3px);
 }
 
 .red_btn {
@@ -91,7 +92,12 @@ html, body, #root {
   margin-bottom: 30px;
   background-color: #ff80c9;
   color: white;
+  overflow: hidden;
   cursor: pointer;
+}
+
+.red_btn:hover {
+  transform: translateY(-3px);
 }
 
 .blue_btn {
@@ -100,6 +106,11 @@ html, body, #root {
   background-color: #41c5ff;
   color: white;
   cursor: pointer;
+  overflow: hidden;
+}
+
+.blue_btn:hover {
+  transform: translateY(-3px);
 }
 
 .simple_btn {
@@ -110,6 +121,42 @@ html, body, #root {
   font-size: 0.8em;
   padding: 1px 6px;
   cursor: pointer;
+  overflow: hidden;
+}
+
+.simple_btn:hover {
+  transform: translateY(-3px);
+}
+
+.ripple {
+  background-color: #41c5ff;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 5;
+  transform: translateX(-50%) translateY(-50%);
+  outline: none;
+  pointer-events: none;
+  animation-name: rippleEffect;
+  animation-duration: .5s;
+  animation-fill-mode: none;
+  width: 0px;
+  height: 0px;
+}
+
+@keyframes rippleEffect {
+  0% {
+    opacity: 1;
+    width: 0px;
+    height: 0px;
+  }
+  40% {
+    opacity: .3;
+  }
+  100% {
+    opacity: 0;
+    width: 100px;
+    height: 100px;
+  }
 }
 
 .input_conteiner {
@@ -388,6 +435,10 @@ html, body, #root {
   cursor: pointer;
 }
 
+.set-wrapper .setting button:hover {
+  transform: translateY(-3px);
+}
+
 .set-wrapper .setting label {
   cursor: pointer;
 }
@@ -478,6 +529,10 @@ html, body, #root {
   transform: translate(-50%, -50%);
 }
 
+.reset_modal .blue_btn:hover {
+  transform: translateY(-3px);
+}
+
 .about {
   position: absolute;
   top: 0;
@@ -523,6 +578,10 @@ html, body, #root {
   margin-top: 20px;
 }
 
+.about_table .blue_btn:hover {
+  transform: translateY(-3px);
+}
+
 .about_table .flex {
   justify-content: space-between;
 }
@@ -555,6 +614,15 @@ html, body, #root {
   h2 {
     font-size: 1.3em;
     margin: 0.5em 0;
+  }
+  .stampwrap {
+    margin-bottom: 0.5em;
+  }
+}
+
+@media (min-height: 732px) {
+  .appComp {
+    height: 100%;
   }
 }
 /*# sourceMappingURL=App.css.map */

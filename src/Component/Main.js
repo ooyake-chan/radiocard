@@ -128,11 +128,11 @@ class Main extends Component{
           {bgmode ? '' : <img src={this.state.image}/> }
           <h2>{date}</h2>
         </div>
-        <Modal id="img_up_modal" name="画像のアップロード" style={img_modal_Style} body={img_modal_Body}/>
-        <Modal id="reset_modal" name="リセット" style={reset_modal_Style} body={reset_modal_Body}/>
         <Stamps />
       </div>
         <Setting colorChange={colorChange} stampChange={stampChange} fontChange={fontChange}/>
+        <Modal id="img_up_modal" name="画像のアップロード" style={img_modal_Style} body={img_modal_Body}/>
+        <Modal id="reset_modal" name="リセット" style={reset_modal_Style} body={reset_modal_Body}/>
     </main>
   }
 }

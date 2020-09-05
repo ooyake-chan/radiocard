@@ -5,6 +5,7 @@ import { backAction } from './Store'
 import First from './Component/First'
 import Main from './Component/Main'
 import { About } from './Component/About'
+import{ ripple } from './static/Ripple'
 
 class App extends Component {
   
@@ -89,7 +90,7 @@ class App extends Component {
       </div>) 
       
     }
-    return <div style={style} className="appComp" >
+    return <div style={style} className="appComp" onClick={ripple} >
       {/* <button onClick={this.doChange}>click</button> */}
       {current_page}
     </div>
