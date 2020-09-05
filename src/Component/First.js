@@ -48,11 +48,13 @@ class First extends Component{
     const modalBody = (
       <div>
         <form id="first_form">
-        <input type="text" size="20" value={this.state.name} onChange={this.doChange} /><br/>
+        <input type="text" size="20" placeholder="名前を入力してね" onChange={this.doChange} /><br/>
         <button className="yel_btn" onClick={this.doAction}>これでつくる</button>
         </form>
+        <a href="#!" className="simple_btn">とじる</a>
       </div>
     )
+
     return <div className="first_conteiner">
       <div className="first">
         <h1>カードの使い方</h1>
