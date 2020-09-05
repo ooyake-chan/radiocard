@@ -136,12 +136,4 @@ class Main extends Component{
     </main>
   }
 }
-
-function mappingState(state){
-  return{
-    cardname:state.cardname,
-    stampcheck:state.stampcheck,
-  }
-}
-
 export default connect((state)=>state)(Main)

@@ -197,8 +197,6 @@ html,body,#root{
     width: 100%;
     height: 100%;
     margin: 0;
-    // background-color: rgba(67, 67, 67, 0.7);
-    // opacity: 0;
     cursor: pointer;
   }
   .modal{
@@ -245,6 +243,7 @@ html,body,#root{
   }
   & h2{
     color: $main-color;
+    margin: 1.25em;
   }
   & hr{
     border: 2px dashed $main-color;
@@ -252,6 +251,7 @@ html,body,#root{
   .table{
     margin-top:20px;
     margin-bottom:30px;
+    justify-content: center;
   }
   .blue_btn{
     display: inline-block;

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux'
 import Modal from '../Component/Modal'
 import{ nameAction } from '../Store'
-import { ripple } from '../static/Ripple'
 
 class First extends Component{
   constructor(props){

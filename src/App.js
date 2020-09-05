@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
 import './App.css';
-import { backAction } from './Store'
 import First from './Component/First'
 import Main from './Component/Main'
 import { About } from './Component/About'
@@ -51,7 +50,6 @@ class App extends Component {
     let bgImg = {
       backgroundImage:"url("+this.props.image+")",
       backgroundSize:"cover",
-      // height:"100%",
     }
     let style
     style = this.props.bgmode ? bgImg : bgColor
@@ -91,17 +89,8 @@ class App extends Component {
       
     }
     return <div style={style} className="appComp" onClick={ripple} >
-      {/* <button onClick={this.doChange}>click</button> */}
       {current_page}
     </div>
-  }
-}
-
-function mappingState(state){
-  return {
-    backcolor:state.backcolor,
-    cardname:state.cardname,
-    mode:state.mode,
   }
 }
 

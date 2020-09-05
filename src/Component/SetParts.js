@@ -1,8 +1,4 @@
 import React, { Component } from 'react';
-import{ ripple } from '../static/Ripple'
-import Modal from './Modal'
-import gire_icon from '../static/gire_icon.svg'
-import back_icon from '../static/backsample_1.jpg'
 
 export const stamp = [
   require('../static/stamp_good.svg'),

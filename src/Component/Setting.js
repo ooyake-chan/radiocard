@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux'
 import gire_icon from '../static/gire_icon.svg'
 import { backAction, fontAction, nameAction } from '../Store'
-import { SetMain, SetBack, SetStamp, SetDetail, SetName, stamp } from './SetParts'
+import { SetMain, SetBack, SetStamp, SetDetail, SetName, } from './SetParts'
 
 const img ={
   gire:require('../static/gire_icon.svg'),
