@@ -2,6 +2,7 @@
   "name": "card_app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "./",
   "dependencies": {
     "@taufik-nurrohman/color-picker": "^2.1.1",
     "@testing-library/jest-dom": "^4.2.4",
