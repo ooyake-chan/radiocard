@@ -10,13 +10,21 @@ const stamp = [
   require('../static/stamp_sun.svg'),
   require('../static/stamp_cake.svg'),
 ]
+const teststamp = [
+  require('../static/stamp_good.png'),
+  require('../static/stamp_che.png'),
+  require('../static/stamp_chi.png'),
+  require('../static/stamp_rose.png'),
+  require('../static/stamp_sun.png'),
+  require('../static/stamp_cake.png'),
+]
 
 class Stamp extends Component{
   constructor(props){
     super(props)
   }
   render(){
-  let img = (<img src={stamp[this.props.index]}/>)
+  let img = (<img src={teststamp[this.props.index]}/>)
   return( 
     <div className="stampwrap">
       <button className="stamp" onClick={this.props.onClick}>

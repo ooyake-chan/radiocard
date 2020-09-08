@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
-import gear_icon from '../static/gear_icon.svg'
+import gear_icon from '../static/gear.png'
 import { backAction, fontAction, nameAction } from '../Store'
 import { SetMain, SetBack, SetStamp, SetDetail, SetName, } from './SetParts'
 

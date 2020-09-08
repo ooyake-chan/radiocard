@@ -378,8 +378,9 @@ html, body, #root {
   transition: 1s;
 }
 
-.set-wrapper .setting label > img {
+.set-wrapper .setting .gear {
   transform: translateY(50%);
+  width: 70px;
 }
 
 .set-wrapper .setting .setConteiner {
