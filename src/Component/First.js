@@ -40,10 +40,8 @@ class First extends Component{
   modeAction(mode){
     if(mode === 'main'){
       this.props.dispatch({type:'MAIN'})
-      this.ripple()
     }else if(mode === 'about'){
       this.props.dispatch({type:'ABOUT'})
-      this.ripple()
     }
   }
 
