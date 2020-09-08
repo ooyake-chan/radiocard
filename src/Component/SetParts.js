@@ -8,9 +8,17 @@ export const stamp = [
   require('../static/stamp_sun.svg'),
   require('../static/stamp_cake.svg')
 ]
+export const teststamp = [
+  require('../static/stamp_good.png'),
+  require('../static/stamp_che.png'),
+  require('../static/stamp_chi.png'),
+  require('../static/stamp_rose.png'),
+  require('../static/stamp_sun.png'),
+  require('../static/stamp_cake.png')
+]
 const img ={
-  gear:require('../static/gear_icon.svg'),
-  good:require('../static/stamp_good.svg'),
+  gear:require('../static/gear.png'),
+  good:require('../static/stamp_good.png'),
   download:require('../static/download_icon.png'),
   part:require('../static/switch_part.svg'),
   cover:require('../static/switch_cover.svg'),
@@ -26,7 +34,7 @@ export function SetMain(props){
         <p>背景を変える</p>
         </div>
         <div onClick={()=>props.pageChange('STAMP')} className="cursor">
-          <img src={stamp[props.stampIndex]}/>
+          <img src={teststamp[props.stampIndex]}/>
           <p>スタンプを変える</p>
         </div>
         <div onClick={()=>props.pageChange('NAME')} className="cursor">
@@ -81,27 +89,27 @@ export function SetStamp(props){
       <h2>スタンプを変える</h2>
       <div className="flex">
         <div onClick={()=> props.getStamp(0)} className="cursor">
-          <img src={stamp[0]}/>
+          <img src={teststamp[0]}/>
           <p>スタンプ1</p>
         </div>
         <div onClick={()=> props.getStamp(1)} className="cursor">
-          <img src={stamp[1]}/>
+          <img src={teststamp[1]}/>
           <p>スタンプ2</p>
         </div>
         <div onClick={()=> props.getStamp(2)} className="cursor">
-          <img src={stamp[2]}/>
+          <img src={teststamp[2]}/>
           <p>スタンプ3</p>
         </div>
         <div onClick={()=> props.getStamp(3)} className="cursor">
-          <img src={stamp[3]}/>
+          <img src={teststamp[3]}/>
           <p>スタンプ4</p>
         </div>
         <div onClick={()=> props.getStamp(4)} className="cursor">
-          <img src={stamp[4]}/>
+          <img src={teststamp[4]}/>
           <p>スタンプ5</p>
         </div>
         <div onClick={()=> props.getStamp(5)} className="cursor">
-          <img src={stamp[5]}/>
+          <img src={teststamp[5]}/>
           <p>スタンプ6</p>
         </div>
       </div>
