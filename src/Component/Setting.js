@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
-import gire_icon from '../static/gire_icon.svg'
+import gear_icon from '../static/gear_icon.svg'
 import { backAction, fontAction, nameAction } from '../Store'
 import { SetMain, SetBack, SetStamp, SetDetail, SetName, } from './SetParts'
 
 const img ={
-  gire:require('../static/gire_icon.svg'),
+  gear:require('../static/gear_icon.svg'),
   good:require('../static/stamp_good.svg'),
 }
 
@@ -131,7 +131,7 @@ class Setting extends Component{
         <input id="set-input" type="checkbox" />
         <label className="s-back" for="set-input"/>
         <div className="setting">
-          <label for="set-input"><img src={gire_icon} className="gire" /></label>
+          <label for="set-input"><img src={gear_icon} className="gear" /></label>
           <div className="setConteiner">
               {currentPage()}
           </div>

@@ -9,7 +9,7 @@ export const stamp = [
   require('../static/stamp_cake.svg')
 ]
 const img ={
-  gire:require('../static/gire_icon.svg'),
+  gear:require('../static/gear_icon.svg'),
   good:require('../static/stamp_good.svg'),
   download:require('../static/download_icon.png'),
   part:require('../static/switch_part.svg'),
