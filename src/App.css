@@ -115,13 +115,11 @@ html, body, #root {
 
 .simple_btn {
   display: inline-block;
-  border: 2px solid #434343;
   margin-top: 40px;
   color: #434343;
   font-size: 0.8em;
   padding: 1px 6px;
   cursor: pointer;
-  overflow: hidden;
 }
 
 .simple_btn:hover {
@@ -263,6 +261,11 @@ html, body, #root {
   border: 2px dashed #41c5ff;
 }
 
+.first .gear {
+  width: 1em;
+  vertical-align: middle;
+}
+
 .first .table {
   margin-top: 20px;
   margin-bottom: 30px;
@@ -398,7 +401,10 @@ html, body, #root {
 
 .set-wrapper .setting .setConteiner a {
   display: inline-block;
-  margin: 1.25em 0;
+}
+
+.set-wrapper .setting .setConteiner p {
+  margin: 20px 0;
 }
 
 .set-wrapper .setting .setConteiner .notCircle {
@@ -432,7 +438,6 @@ html, body, #root {
 }
 
 .set-wrapper .setting button {
-  border: 2px solid #434343;
   margin-top: 40px;
   color: #434343;
   cursor: pointer;
@@ -470,13 +475,13 @@ html, body, #root {
   display: none;
 }
 
-.set-wrapper .setdetail span {
+.set-wrapper .setdetail .dayswitch {
   color: #41c5ff;
 }
 
 #set-input:checked ~ .setting .gear {
-  animation: r1 5s linear infinite;
-  margin-bottom: 15px;
+  animation: r1 15s linear infinite;
+  margin-bottom: 20px;
 }
 
 #set-input:checked ~ .setting {
@@ -492,19 +497,24 @@ html, body, #root {
   display: block;
 }
 
-#img_up_modal span {
+.btn_wrapper a {
+  margin: 0px;
   display: inline-block;
-  margin-bottom: 20px;
+  color: #434343;
 }
 
-#img_up_modal #preview_img {
+.btn_wrapper #preview_img {
   width: 90%;
   max-height: 200px;
 }
 
-#img_up_modal a {
+.btn_wrapper span {
   display: inline-block;
-  margin-top: 20px;
+  margin: 20px 0;
+}
+
+.set_img .yel_btn {
+  display: inline-block;
   color: #434343;
 }
 
@@ -519,6 +529,7 @@ html, body, #root {
 .setreset {
   font-size: 2em;
   background-color: #ff80c9 !important;
+  margin: 0 !important;
 }
 
 .coution_icon {

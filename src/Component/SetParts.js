@@ -1,14 +1,6 @@
 import React, { Component } from 'react';
 
 export const stamp = [
-  require('../static/stamp_good.svg'),
-  require('../static/stamp_che.svg'),
-  require('../static/stamp_chekin.svg'),
-  require('../static/stamp_rose.svg'),
-  require('../static/stamp_sun.svg'),
-  require('../static/stamp_cake.svg')
-]
-export const teststamp = [
   require('../static/stamp_good.png'),
   require('../static/stamp_che.png'),
   require('../static/stamp_chi.png'),
@@ -19,7 +11,6 @@ export const teststamp = [
 const img ={
   gear:require('../static/gear.png'),
   good:require('../static/stamp_good.png'),
-  download:require('../static/download_icon.png'),
   part:require('../static/switch_part.svg'),
   cover:require('../static/switch_cover.svg'),
 }
@@ -34,7 +25,7 @@ export function SetMain(props){
         <p>背景を変える</p>
         </div>
         <div onClick={()=>props.pageChange('STAMP')} className="cursor">
-          <img src={teststamp[props.stampIndex]}/>
+          <img src={stamp[props.stampIndex]}/>
           <p>スタンプを変える</p>
         </div>
         <div onClick={()=>props.pageChange('NAME')} className="cursor">
@@ -66,8 +57,10 @@ export function SetBack(props){
         </div>
 
         <div className="cursor">
+          <a href="#img_up_modal" className="btn_wrapper">
           <img src={props.backimage} className="notCircle"/><br/>
-          <a href="#img_up_modal">画像を変える</a>
+          <span>画像を変える</span>
+          </a>
         </div>
         <div onClick={()=>props.bgSwitch()} className="cursor">
           {props.bgmode ?
@@ -89,27 +82,27 @@ export function SetStamp(props){
       <h2>スタンプを変える</h2>
       <div className="flex">
         <div onClick={()=> props.getStamp(0)} className="cursor">
-          <img src={teststamp[0]}/>
+          <img src={stamp[0]}/>
           <p>スタンプ1</p>
         </div>
         <div onClick={()=> props.getStamp(1)} className="cursor">
-          <img src={teststamp[1]}/>
+          <img src={stamp[1]}/>
           <p>スタンプ2</p>
         </div>
         <div onClick={()=> props.getStamp(2)} className="cursor">
-          <img src={teststamp[2]}/>
+          <img src={stamp[2]}/>
           <p>スタンプ3</p>
         </div>
         <div onClick={()=> props.getStamp(3)} className="cursor">
-          <img src={teststamp[3]}/>
+          <img src={stamp[3]}/>
           <p>スタンプ4</p>
         </div>
         <div onClick={()=> props.getStamp(4)} className="cursor">
-          <img src={teststamp[4]}/>
+          <img src={stamp[4]}/>
           <p>スタンプ5</p>
         </div>
         <div onClick={()=> props.getStamp(5)} className="cursor">
-          <img src={teststamp[5]}/>
+          <img src={stamp[5]}/>
           <p>スタンプ6</p>
         </div>
       </div>
@@ -153,21 +146,23 @@ export function SetDetail(props){
         <div onClick={()=> props.daySwitch()} className="cursor">
           <span className='block'>17</span>
           {props.daymode ?
-          <p>日付あり/<span>なし</span></p>:
-          <p>日付<span>あり</span>/なし</p>
+          <p>日付あり/<span className="dayswitch">なし</span></p>:
+          <p>日付<span className="dayswitch">あり</span>/なし</p>
           }
         </div>
         <div onClick={()=> props.howtoPage()} className="cursor">
           <span className='block'>How</span>
           <p>使い方</p>
         </div>
-        <div onClick={()=> props.pageChange('NAME')} className="cursor">
+        {/* <div onClick={()=> props.pageChange('NAME')} className="cursor">
           <span className='block'>En</span>
           <p>English</p>
-        </div>
+        </div> */}
         <div className="cursor">
+          <a href="#reset_modal" className="btn_wrapper">
           <span className='block setreset'>!</span><br/>
-          <a href="#reset_modal">リセット</a>
+          <span>リセット</span>
+          </a>
         </div>
       </div>
       <div>

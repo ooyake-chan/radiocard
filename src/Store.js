@@ -8,8 +8,8 @@ const state_value = {
   image:require('./static/backsample_1.jpg'),
   stampIndex:0,
   stampcheck:Array().fill(false),
-  bgmode:true,
-  daymode:true,
+  bgmode:false,
+  daymode:false,
   mode:'main',
   blacklist:['mode'],
   whitelist:['cardname', 'stampcheck', 'backcolor', 'stamp', 'stampIndex', 'image']
@@ -225,7 +225,7 @@ function resetReduce(){
     stampIndex:0,
     stampcheck:Array().fill(false),
     bgmode:false,
-    daymode:true,
+    daymode:false,
     mode:'first'
   }
 }

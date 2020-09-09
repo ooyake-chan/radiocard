@@ -110,13 +110,12 @@ html,body,#root{
 }
 .simple_btn{
   display: inline-block;
-  border: 2px solid $text-color;
+  // border: 2px solid $text-color;
   margin-top: 40px;
   color: $text-color;
   font-size: 0.8em;
   padding: 1px 6px;
   cursor: pointer;
-  overflow: hidden;
   &:hover{
     transform: translateY(-3px);
   }
@@ -248,6 +247,10 @@ html,body,#root{
   & hr{
     border: 2px dashed $main-color;
   }
+  .gear{
+    width:1em;
+    vertical-align: middle;
+  }
   .table{
     margin-top:20px;
     margin-bottom:30px;
@@ -364,7 +367,9 @@ html,body,#root{
       }
       & a{
         display: inline-block;
-        margin: 1.25em 0 ;
+      }
+      & p{
+        margin: 20px 0;
       }
       .notCircle{
         border-radius: 0;
@@ -393,7 +398,7 @@ html,body,#root{
       }
     }
     button{
-      border: 2px solid $text-color;
+      // border: 2px solid $text-color;
       margin-top: 40px;
       color: $text-color;
       cursor: pointer;
@@ -427,7 +432,7 @@ html,body,#root{
     display: none;
   }
   .setdetail {
-    & span {
+    .dayswitch {
       color:$main-color;
     }
 
@@ -435,8 +440,8 @@ html,body,#root{
 }
 #set-input:checked{
   ~.setting .gear{
-    animation: r1 5s linear infinite;
-    margin-bottom: 15px;
+    animation: r1 15s linear infinite;
+    margin-bottom: 20px;
   }
   ~.setting{
     transform: translateY(-75%);
@@ -450,18 +455,25 @@ html,body,#root{
   }
 }
 
-#img_up_modal{
-  & span{
+.btn_wrapper{
+  & a{
+    margin: 0px;
     display: inline-block;
-    margin-bottom: 20px;
+    color: $text-color;
   }
   #preview_img{
     width: 90%;
     max-height: 200px;
   }
-  & a{
+  & span{
     display: inline-block;
-    margin-top: 20px;
+    margin: 20px 0 ;
+  }
+}
+
+.set_img{
+  .yel_btn{
+    display: inline-block;
     color: $text-color;
   }
 }
@@ -478,6 +490,7 @@ html,body,#root{
 .setreset{
   font-size: 2em;
   background-color: $red !important;
+  margin: 0 !important;
 }
 .coution_icon{
   position: relative;

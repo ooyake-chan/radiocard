@@ -76,7 +76,7 @@ class Setting extends Component{
 
   render(){
     let close_btn = (
-      <label for="set-input" className="simple_btn">とじる</label>
+      <label for="set-input" className="simple_btn">×とじる</label>
     )
     let stampIndex = this.props.stampIndex
     let backimage = this.props.image

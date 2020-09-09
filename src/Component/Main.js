@@ -82,7 +82,7 @@ class Main extends Component{
       backgroundColor:"#41c5ff",
     }
     const img_modal_Body = (
-      <div>
+      <div className="set_img">
         <span id="preview">
           プレビュー
           </span>
@@ -90,7 +90,7 @@ class Main extends Component{
         <input type="file" id="input_img" onChange={this.fileInput}/><br/>
         <a className="yel_btn" onClick={()=>this.imageChange()} href="#">画像を変更する</a>
         </form>
-        <a href="#!" className="simple_btn">とじる</a>
+        <a href="#!" className="simple_btn">×とじる</a>
       </div>
     )
 
@@ -125,7 +125,10 @@ class Main extends Component{
           :
           <h1>{this.props.cardname}</h1>
           }
-          {bgmode ? '' : <img src={this.state.image}/> }
+          {bgmode ?
+           '' :
+            <img src={this.state.image}/> 
+          }
           <h2>{date}</h2>
         </div>
         <Stamps />

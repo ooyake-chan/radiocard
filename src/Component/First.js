@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux'
 import Modal from '../Component/Modal'
 import{ nameAction } from '../Store'
+import { image } from '../static/image'
+
 
 class First extends Component{
   constructor(props){
@@ -56,7 +58,7 @@ class First extends Component{
         <input type="text" size="20" placeholder="名前を入力してね" onChange={this.doChange} /><br/>
         <button className="yel_btn" onClick={this.doAction}>これでつくる</button>
         </form>
-        <a href="#!" className="simple_btn">とじる</a>
+        <a href="#!" className="simple_btn">×とじる</a>
       </div>
     )
 
@@ -64,11 +66,10 @@ class First extends Component{
       <div className="first">
         <h1>カードの使い方</h1>
         <p>カードの名前を入力します<br/>
-          ↓<br/>
-          カードができた！<br/>
+          （例：ラジオ体操カード・レッスンカード）<br/>
         </p>
         <hr />
-        <p>目標を達成できたらくうらんをタッチ！<br/>
+        <p>その日の目標を達成できたら空欄をタップ！<br/>
           ↓<br/>
           スタンプが押される！<br/>
         </p>
@@ -76,8 +77,8 @@ class First extends Component{
         <div className="table flex">
           <h2>Hint!</h2>
           <div>
-          <p>スタンプを押した場所をもう一度タッチすると取り消せます</p>
-          <p>設定マークをタッチすると様々な設定がおこなえます</p>
+          <p>スタンプを押した欄をもう一度タッチすると取り消せます</p>
+          <p>設定マーク<img src={image.gear} className="gear" />をタッチすると様々な設定がおこなえます</p>
           </div>
         </div>
         {this.mode() ? 
