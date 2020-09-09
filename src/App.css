@@ -331,15 +331,17 @@ html, body, #root {
 }
 
 .stamps .stampwrap {
-  width: 14%;
+  width: 13%;
+  margin: 0 0.5%;
   margin-bottom: 15px;
   display: inline-block;
 }
 
 .stamps .stampwrap .stamp {
   position: relative;
-  width: 70%;
-  padding-top: 80%;
+  width: 100%;
+  padding: 0;
+  padding-top: 100%;
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.8);
   box-sizing: content-box;
@@ -371,6 +373,7 @@ html, body, #root {
   width: 100%;
   text-align: center;
   bottom: 0;
+  left: 0;
   transform: translateY(75%);
   color: #434343;
 }
@@ -461,11 +464,11 @@ html, body, #root {
 
 .set-wrapper .s-back {
   position: fixed;
-  top: -250%;
+  top: -610%;
   left: 0;
   z-index: 1;
   width: 100%;
-  height: 300%;
+  height: 600%;
   background-color: rgba(67, 67, 67, 0.7);
   display: none;
   cursor: pointer;
