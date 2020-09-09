@@ -46,7 +46,7 @@ class Main extends Component{
         const img = document.createElement('img')
         img.src = imageUrl
         img.id = 'preview_img'
-        preview.appendchickenld(img)
+        preview.appendChild(img)
       }
       reader.readAsDataURL(file)
     }
