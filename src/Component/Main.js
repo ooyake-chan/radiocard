@@ -64,7 +64,7 @@ class Main extends Component{
     this.setState({
       image:url
     })
-    preview.src = ""
+    preview.remove()
   }
 
   reset(){
@@ -83,11 +83,10 @@ class Main extends Component{
     }
     const img_modal_Body = (
       <div className="set_img">
-        <span id="preview">
-          プレビュー
-          </span>
+        <p>プレビュー</p>
+        <span id="preview" />
         <form>
-        <input type="file" id="input_img" onChange={this.fileInput}/><br/>
+        <input type="file" id="input_img" onChange={this.fileInput} accept="image/*" formMethod="post" multiple=""/><br/>
         <a className="yel_btn" onClick={()=>this.imageChange()} href="#">画像を変更する</a>
         </form>
         <a href="#!" className="simple_btn">×とじる</a>

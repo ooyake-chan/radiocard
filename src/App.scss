@@ -464,14 +464,13 @@ html,body,#root{
     display: inline-block;
     color: $text-color;
   }
-  #preview_img{
-    width: 90%;
-    max-height: 200px;
-  }
   & span{
     display: inline-block;
     margin: 20px 0 ;
   }
+}
+#preview_img{
+  height: 200px;
 }
 
 .set_img{
