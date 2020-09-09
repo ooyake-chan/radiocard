@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
 import{ Twitter,Github } from '../static/image'
 
-const img = {
-  twitter:require('../static/twitter-brands.svg'),
-  github:require('../static/github-brands.svg'),
-}
-
 export function About(props){
     return( <div className="about">
       <div className="about_table">

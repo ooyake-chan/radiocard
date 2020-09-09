@@ -5,7 +5,7 @@ import { stampAction } from '../Store'
 const stamp = [
   require('../static/stamp_good.svg'),
   require('../static/stamp_che.svg'),
-  require('../static/stamp_chekin.svg'),
+  require('../static/stamp_chicken.svg'),
   require('../static/stamp_rose.svg'),
   require('../static/stamp_sun.svg'),
   require('../static/stamp_cake.svg'),
@@ -13,7 +13,7 @@ const stamp = [
 const teststamp = [
   require('../static/stamp_good.png'),
   require('../static/stamp_che.png'),
-  require('../static/stamp_chi.png'),
+  require('../static/stamp_chicken.png'),
   require('../static/stamp_rose.png'),
   require('../static/stamp_sun.png'),
   require('../static/stamp_cake.png'),

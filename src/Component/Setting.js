@@ -5,7 +5,7 @@ import { backAction, fontAction, nameAction } from '../Store'
 import { SetMain, SetBack, SetStamp, SetDetail, SetName, } from './SetParts'
 
 const img ={
-  gear:require('../static/gear_icon.svg'),
+  gear:require('../static/gear.svg'),
   good:require('../static/stamp_good.svg'),
 }
 
