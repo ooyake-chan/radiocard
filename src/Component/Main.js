@@ -105,7 +105,7 @@ class Main extends Component{
         </div>
         <p>カードをリセットしようとしています<br/>
         リセットするとデータは元に戻せません</p>
-        <button className="red_btn" onClick={()=>this.reset()}>それでもリセットする！</button><br/>
+        <a className="red_btn" onClick={()=>this.reset()} href="#">それでもリセットする！</a><br/>
         <a className="blue_btn" href="#!">リセットしないでもどる</a>
       </div>
     )

@@ -545,7 +545,13 @@ html, body, #root {
   transform: translate(-50%, -50%);
 }
 
-.reset_modal .blue_btn:hover {
+.reset_modal .blue_btn, .reset_modal .red_btn {
+  display: inline-block;
+  margin: 0;
+  margin-top: 20px;
+}
+
+.reset_modal .blue_btn:hover, .reset_modal .red_btn:hover {
   transform: translateY(-3px);
 }
 
@@ -606,14 +612,25 @@ html, body, #root {
   width: 70%;
 }
 
-.about_table .fa-twitter {
+.about_table .fa-twitter, .about_table .fa-github, .about_table .fa-facebook-square, .about_table .fa-line {
   width: 2em;
-  color: #1da1f2;
+  margin: 0.5em;
+}
+
+.about_table .fa-twitter:hover, .about_table .fa-github:hover, .about_table .fa-facebook-square:hover, .about_table .fa-line:hover {
+  transform: translateY(-3px);
 }
 
 .about_table .fa-github {
-  width: 2em;
   color: #24292e;
+}
+
+.about_table .fa-facebook-square {
+  color: #3b5998;
+}
+
+.about_table .fa-line {
+  color: #07b53b;
 }
 
 @media (max-width: 450px) {

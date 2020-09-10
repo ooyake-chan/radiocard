@@ -501,7 +501,10 @@ html,body,#root{
   & h2{
   @include center-psition();
   }
-  .blue_btn{
+  .blue_btn, .red_btn{
+    display: inline-block;
+    margin:0;
+    margin-top: 20px;
     &:hover{
       transform: translateY(-3px);
     }
@@ -554,13 +557,21 @@ html,body,#root{
   .git{
     width: 70%;
   }
-  .fa-twitter{
+  .fa-twitter, .fa-github, .fa-facebook-square, .fa-line{
     width: 2em;
-    color: #1da1f2;
+    margin: 0.5em;
+    &:hover{
+      transform: translateY(-3px);
+    }
   }
   .fa-github{
-    width: 2em;
     color:#24292e;
+  }
+  .fa-facebook-square{
+    color: #3b5998;
+  }
+  .fa-line{
+    color: #07b53b;
   }
 }
 
