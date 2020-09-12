@@ -46,8 +46,16 @@ html, body, #root {
   text-align: center;
 }
 
+.left {
+  text-align: left;
+}
+
 .overflow {
   overflow: hidden;
+}
+
+.icon {
+  height: 1em;
 }
 
 .cursor {
@@ -281,6 +289,20 @@ html, body, #root {
 .first .text_btn {
   color: #41c5ff;
   cursor: pointer;
+}
+
+.shortmodal {
+  height: calc(60vh);
+  overflow-y: scroll;
+}
+
+.short {
+  width: 50%;
+}
+
+.short img {
+  width: 45%;
+  margin: 10px;
 }
 
 .main {

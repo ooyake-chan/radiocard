@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 
 export const image = {
-  gear:require('../static/gear.png')
+  gear:require('../static/gear.png'),
+  ellipsis:require('../static/ellipsis-v-solid.svg'),
+  short01:require('../static/short_01.png'),
+  short02:require('../static/short_02.png'),
 }
 
 export function Twitter(){

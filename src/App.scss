@@ -53,8 +53,15 @@ html,body,#root{
 .center{
   text-align: center;
 }
+.left{
+  text-align: left;
+}
 .overflow{
   overflow: hidden;
+}
+.icon{
+  height: 1em;
+  
 }
 .cursor{
   cursor: pointer;
@@ -266,6 +273,18 @@ html,body,#root{
     cursor: pointer;
   }
 }
+.shortmodal{
+  height: calc(60vh);
+  overflow-y: scroll;
+}
+.short{
+  width: 50%;
+  & img{
+    width: 45%;
+    margin: 10px;
+  }
+}
+
 
 // Mainコンポーネント
 .main{

@@ -62,6 +62,31 @@ class First extends Component{
       </div>
     )
 
+    // ショートカットを作成するモーダル
+    const shortcutBody = (
+      <div className="left shortmodal">
+        <h2>iphoneの場合</h2>
+        <div className="flex iphone">
+          <ol>
+            <li>safariで開く</li>
+            <li>画面下部から共有オプションを開く</li>
+            <li>「ホーム画面に追加」を選択する</li>
+          </ol>
+          <div className="short">
+            <img src={image.short01}/>
+            <img src={image.short02}/>
+          </div>
+        </div>  
+        <h2>androidの場合</h2>
+          <ol>
+            <li>chromeで開く</li>
+            <li>右上にあるメニューアイコン<img src={image.ellipsis} className="icon"/>を開く</li>
+            <li>共有オプションから「ホーム画面に追加」を選択する</li>
+          </ol>
+        <div className="center"><a href="#!" className="simple_btn">×とじる</a></div>
+      </div>
+    )
+
     return <div className="first_conteiner">
       <div className="first">
         <h1>カードの使い方</h1>
@@ -69,14 +94,18 @@ class First extends Component{
           （例：ラジオ体操カード・レッスンカード）<br/>
         </p>
         <hr />
-        <p>その日の目標を達成できたら空欄をタップ！<br/>
+        <p>その日の目標を達成できたら空欄をタッチ！<br/>
           ↓<br/>
           スタンプが押される！<br/>
         </p>
         <hr />
-        <div className="table flex">
+        <div className="table flex left">
           <h2>Hint!</h2>
           <div>
+          <p>カードのデータはブラウザごとに保存されます。<br/>
+          複数のカードを作成したい場合はホーム画面にショートカットを作成することをおすすめします<br/>
+          <a href="#shortcut">ショートカットを作成するには</a>
+          </p>
           <p>スタンプを押した欄をもう一度タッチすると取り消せます</p>
           <p>設定マーク<img src={image.gear} className="gear" />をタッチすると様々な設定がおこなえます</p>
           </div>
@@ -92,6 +121,7 @@ class First extends Component{
         }
       </div>
         <Modal id="modal" name="カードをつくる" style={modalStyle} body={modalBody}/>
+        <Modal id="shortcut" name="ショートカットを作成するには" style={modalStyle} body={shortcutBody}/>
     </div>
   }
 }
